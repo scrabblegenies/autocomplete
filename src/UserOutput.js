@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class UserOutput extends Component() {
+class UserOutput extends Component {
     render() {
         return (
             <div>

@@ -1,29 +1,28 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
+import UserInput from './UserInput.js';
+// import UserOutput from './UserOutput.js'
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
       isLoading: true,
-      firstLetterResult:[]
+      firstLetterResult:[],
+      firstLetter: ''
     }
     console.log('Hello1');
 
   }
-  axiosCall = function () {
+  axiosCall = function (firstLetter) {
     let temporaryList = [];
-    let variable = 's';
+    // let variable = 's';
     axios({
       //The API has no other way of sending exact data. I need to call the whole database.
-      url: `http://api.datamuse.com/sug?max=1000&s=${variable}`,
+      url: `http://api.datamuse.com/sug?max=1000&s=${firstLetter}`,
       method: 'GET',
-      data: {
-        max: 1000,
-        // s: ""
-        // s: "userInput"
-      }
+
     }).then((response) => {
         temporaryList = response;
         console.log('Then');
@@ -35,14 +34,15 @@ class App extends Component {
       .catch(function (error) {
         console.log('CrazyTown');
       })
-      // Setting up parameters for if the promise is fulfilled or not
-          
-          
-          // isLoading: fa
-        // slotApp.koreanToronto = resultOfKoreanToro
-  }
-  // AJAX call for Mexican Restaurants in Mississauga
 
+  }
+
+  handleTextChange = () => {
+    console.log('anything')
+    this.setState({
+      
+    })
+  }
 
   componentDidMount() {
     console.log('Hello3');
@@ -55,7 +55,7 @@ class App extends Component {
     return (
 
       <div className='App'>
-        
+        <UserInput onChange={this.handleTextChange} data={this.state.data}/>
       </div>
     );
   }
