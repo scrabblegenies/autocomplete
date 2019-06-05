@@ -2,9 +2,9 @@ import React, { Component } from 'react';
  
 class UserInput extends Component {
 
-    handleTextChange = (e) => {
-        this.props.onChange(e.target.value);
-    }
+    // handleTextChange = (e) => {
+    //     this.props.onChange(e.target.value);
+    // }
 
     render(){
         return(
@@ -12,7 +12,7 @@ class UserInput extends Component {
                 <form>
                     <input 
                     type="text"
-                    onChange={this.handleTextChange}
+                    onChange={this.props.onChange}
                     value = {this.props.firstLetter}
                     />
                 </form>

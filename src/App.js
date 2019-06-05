@@ -15,22 +15,17 @@ class App extends Component {
     }
   }
 
-  handleTextChange = (textChange) => {
-    // console.log(textChange)
-  let wholeWordSpread = [...textChange];
-  // console.log(wholeWordSpread)
-  
+  handleTextChange = (event) => {
+    let userInput = event.target.value;
+    let wordSpread = [...userInput];
     this.setState({
-      wholeWord: wholeWordSpread
-    },()=>{
-        console.log(this.state.wholeWord)
+      wholeWord: wordSpread,
+    }, () => {
+      console.log(this.state.wholeWord)
     })
-    console.log(wholeWordSpread)
-    // console.log(this.state.wholeWord)
-    // this.axiosCall(this.wholeWord)
-    // console.log(this.axiosCall(this.state.wholeWord))
-
   }
+
+
 
   axiosCall = function (wholeWord) {
     let temporaryList = [];
