@@ -27,6 +27,12 @@ class App extends Component {
     let firstLetter = wordSpread[0];
     this.axiosCall(firstLetter)
     // console.log(this.state.wholeWordResult)
+
+    // We want the axios call to happen only with the first letter
+      if (( wordSpread.length === 1 ) || (wordSpread[0].val !== wordSpread[0] ) ) {
+        this.axiosCall()
+      } 
+
   }
 
 
