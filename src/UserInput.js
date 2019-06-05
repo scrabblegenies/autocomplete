@@ -4,6 +4,7 @@ class UserInput extends Component {
 
     handleTextChange = (e) => {
         this.props.onChange(e.target.value);
+        
     }
 
     render(){
@@ -13,8 +14,7 @@ class UserInput extends Component {
                     <input 
                     type="text"
                     onChange={this.handleTextChange}
-                    value = {this.props.wholeWord}
-
+                    value = {this.props.firstLetter}
                     />
                 </form>
             </div>

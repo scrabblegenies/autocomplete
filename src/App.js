@@ -36,21 +36,22 @@ class App extends Component {
   }
 
   handleTextChange = (textChange) => {
-    console.log(textChange)
+    // console.log(textChange)
   let wholeWordSpread = [...textChange];
-  
+  console.log(wholeWordSpread)
 
 
 
     this.setState({
       wholeWord: wholeWordSpread
     })
-    console.log(this.state.wholeWord)
+    // this.axiosCall(this.wholeWord)
+    // console.log(this.axiosCall(this.state.wholeWord))
   }
 
   componentDidMount() {
 
-    this.axiosCall()
+    
 
   }
 
