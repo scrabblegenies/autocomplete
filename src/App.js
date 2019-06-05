@@ -37,10 +37,11 @@ class App extends Component {
 
   }
 
-  handleTextChange = () => {
+  handleTextChange = (textChange) => {
     console.log('anything')
+    console.log(this.axiosCall(textChange))
     this.setState({
-      
+      firstLetter: textChange
     })
   }
 
