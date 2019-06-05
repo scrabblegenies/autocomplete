@@ -4,7 +4,6 @@ class UserInput extends Component {
 
     handleTextChange = (e) => {
         this.props.onChange(e.target.value);
-        
     }
 
     render(){
