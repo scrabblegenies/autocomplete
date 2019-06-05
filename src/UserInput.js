@@ -13,7 +13,8 @@ class UserInput extends Component {
                     <input 
                     type="text"
                     onChange={this.handleTextChange}
-                    value = {this.props.firstLetter}
+                    value = {this.props.wholeWord}
+
                     />
                 </form>
             </div>
