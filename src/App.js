@@ -11,9 +11,27 @@ class App extends Component {
     this.state = {
       isLoading: true,
       wholeWordResult:[],
-      wholeWord: ''
+      wholeWord: []
     }
   }
+
+  handleTextChange = (textChange) => {
+    // console.log(textChange)
+  let wholeWordSpread = [...textChange];
+  // console.log(wholeWordSpread)
+  
+    this.setState({
+      wholeWord: wholeWordSpread
+    },()=>{
+        console.log(this.state.wholeWord)
+    })
+    console.log(wholeWordSpread)
+    // console.log(this.state.wholeWord)
+    // this.axiosCall(this.wholeWord)
+    // console.log(this.axiosCall(this.state.wholeWord))
+
+  }
+
   axiosCall = function (wholeWord) {
     let temporaryList = [];
     // let variable = 's';
@@ -23,30 +41,17 @@ class App extends Component {
       method: 'GET',
 
     }).then((response) => {
-        temporaryList = response;
+      temporaryList = response;
+      // console.log(temporaryList)
+      this.setState({
+        wholeWordResult: temporaryList,
+      })
       
-        this.setState({
-          wholeWordResult: temporaryList,
-        })
-      })
-      .catch(function (error) {
- 
-      })
-
-  }
-
-  handleTextChange = (textChange) => {
-    // console.log(textChange)
-  let wholeWordSpread = [...textChange];
-  console.log(wholeWordSpread)
-
-
-
-    this.setState({
-      wholeWord: wholeWordSpread
     })
-    // this.axiosCall(this.wholeWord)
-    // console.log(this.axiosCall(this.state.wholeWord))
+      .catch(function (error) {
+
+      })
+
   }
 
   componentDidMount() {
