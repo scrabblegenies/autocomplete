@@ -15,6 +15,7 @@ class App extends Component {
     }
   }
 
+// event handler
   handleTextChange = (event) => {
     let userInput = event.target.value;
     let wordSpread = [...userInput];
@@ -23,8 +24,10 @@ class App extends Component {
     }, () => {
       console.log(this.state.wholeWord)
     })
+    let firstLetter = wordSpread[0];
+    this.axiosCall(firstLetter)
+    // console.log(this.state.wholeWordResult)
   }
-
 
 
   axiosCall = function (wholeWord) {
@@ -40,7 +43,10 @@ class App extends Component {
       // console.log(temporaryList)
       this.setState({
         wholeWordResult: temporaryList,
+      }, () => {
+          console.log(this.state.wholeWordResult)
       })
+
       
     })
       .catch(function (error) {
