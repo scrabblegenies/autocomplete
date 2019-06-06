@@ -16,10 +16,7 @@ font-family: 'Barlow', sans-serif; */
 
 
 .App {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  margin-top: 8%;
+  
 }
 
 body {
@@ -27,6 +24,13 @@ body {
 }
 
 .container {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 8%;
+}
+
+.wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,14 +44,26 @@ body {
   width: 100%;
 }
 
+.iconContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.icon {
+  margin: 0 5px;
+  padding: 5px;
+}
+
+path {
+  fill: #046271;
+}
+
 .searchEngine {
   background: #cabbe8;
   height: 75vh;
   width: 100%;
   position: relative;
 }
-
-
 
 h1 {
   font-family: 'Nova Flat', cursive;
@@ -56,5 +72,12 @@ h1 {
   text-shadow: 3px 3px 5px #4e59dc;
 }
 
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: lavender;
+  font-family: 'Nova Flat', cursive;
+}
 
 

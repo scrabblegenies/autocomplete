@@ -81,21 +81,27 @@ class App extends Component {
       <div className='App'>
         {/* <UserInput onChange={this.handleTextChange} data={this.state.data} /> */}
         <div className="container">
-          <div className="tabBar">
-            <p>hi {questionMarkIcon} </p>
-            <p>{minimizeIcon}</p>
-            <p>{closeWindowIcon}</p>  
-           
-            {/* <i class="fas fa-window-minimize"></i>
+          <div className="wrapper">
+            <div className="tabBar">
+              <div className="iconContainer">
+                <p class="icon">{questionMarkIcon}</p>
+                <p class="icon">{minimizeIcon}</p>
+                <p class="icon">{closeWindowIcon}</p>
+              </div>
+              {/* <i class="fas fa-window-minimize"></i>
             <i class="fas fa-window-close"></i> */}
-          </div>
-          <div className="searchEngine">
-            <h1>Autocomplete</h1>
-            <UserInput onChange={this.handleTextChange} data={this.state.data} />
+            </div>
+            <div className="searchEngine">
+              <h1>Autocomplete</h1>
+              <UserInput onChange={this.handleTextChange} data={this.state.data} />
+            </div>
           </div>
         </div>
         
-        
+        <footer>
+          <img src="assets/windows.png" alt="retro windows logo"/>
+          <p class="start">Start</p> 
+        </footer>
       </div>
     );
   }
