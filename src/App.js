@@ -6,33 +6,32 @@ import UserInput from './UserInput.js';
 
 class App extends Component {
 
+
   constructor() {
     super()
     this.state = {
       isLoading: true,
-      wholeWordResult:[],
-      wholeWord: []
+      wholeWordResult: [],
+      wholeWord: [],
     }
   }
 
-// event handler
+  // event handler
   handleTextChange = (event) => {
     let userInput = event.target.value;
     let wordSpread = [...userInput];
+    let arrayOfWords = [];
+
+    if ((wordSpread.length === 1)) {
+      this.axiosCall(wordSpread[0])
+    }
     this.setState({
-      wholeWord: wordSpread,
+
     }, () => {
-      console.log(this.state.wholeWord)
+        console.log(this.state.wholeWordResult)
     })
-    let firstLetter = wordSpread[0];
-    this.axiosCall(firstLetter)
-    // console.log(this.state.wholeWordResult)
 
     // We want the axios call to happen only with the first letter
-      if (( wordSpread.length === 1 ) || (wordSpread[0].val !== wordSpread[0] ) ) {
-        this.axiosCall()
-      } 
-
   }
 
 
@@ -48,12 +47,12 @@ class App extends Component {
       temporaryList = response;
       // console.log(temporaryList)
       this.setState({
-        wholeWordResult: temporaryList,
+        wholeWordResult: temporaryList.data,
       }, () => {
-          console.log(this.state.wholeWordResult)
+        console.log(this.state.wholeWordResult)
       })
 
-      
+
     })
       .catch(function (error) {
 
@@ -63,7 +62,7 @@ class App extends Component {
 
   componentDidMount() {
 
-    
+
 
   }
 
@@ -71,7 +70,7 @@ class App extends Component {
     return (
 
       <div className='App'>
-        <UserInput onChange={this.handleTextChange} data={this.state.data}/>
+        <UserInput onChange={this.handleTextChange} data={this.state.data} />
       </div>
     );
   }
