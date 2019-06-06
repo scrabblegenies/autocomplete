@@ -3,7 +3,15 @@ import axios from 'axios';
 import './App.css';
 import UserInput from './UserInput.js';
 // import UserOutput from './UserOutput.js'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faQuestionCircle} from '@fortawesome/free-solid-svg-icons'
+import { faWindowMinimize } from '@fortawesome/free-solid-svg-icons'
+import { faWindowClose } from '@fortawesome/free-solid-svg-icons'
 
+
+const questionMarkIcon = <FontAwesomeIcon aria-hidden="true" icon={faQuestionCircle} />
+const minimizeIcon = <FontAwesomeIcon aria-hidden="true" icon={faWindowMinimize} />
+const closeWindowIcon = <FontAwesomeIcon aria-hidden="true" icon={faWindowClose} />
 class App extends Component {
 
 
@@ -74,10 +82,12 @@ class App extends Component {
         {/* <UserInput onChange={this.handleTextChange} data={this.state.data} /> */}
         <div className="container">
           <div className="tabBar">
-            <p>hi</p>
-           <i class="fas fa-question-circle"></i>
-            <i class="fas fa-window-minimize"></i>
-            <i class="fas fa-window-close"></i>
+            <p>hi {questionMarkIcon} </p>
+            <p>{minimizeIcon}</p>
+            <p>{closeWindowIcon}</p>  
+           
+            {/* <i class="fas fa-window-minimize"></i>
+            <i class="fas fa-window-close"></i> */}
           </div>
           <div className="searchEngine">
             <h1>Autocomplete</h1>
