@@ -64,13 +64,28 @@ class App extends Component {
 
 
 
+    
   }
 
   render() {
     return (
 
       <div className='App'>
-        <UserInput onChange={this.handleTextChange} data={this.state.data} />
+        {/* <UserInput onChange={this.handleTextChange} data={this.state.data} /> */}
+        <div className="container">
+          <div className="tabBar">
+            <p>hi</p>
+           <i class="fas fa-question-circle"></i>
+            <i class="fas fa-window-minimize"></i>
+            <i class="fas fa-window-close"></i>
+          </div>
+          <div className="searchEngine">
+            <h1>Autocomplete</h1>
+            <UserInput onChange={this.handleTextChange} data={this.state.data} />
+          </div>
+        </div>
+        
+        
       </div>
     );
   }
