@@ -24,48 +24,21 @@ class App extends Component {
     let wordSpread = [...userInput];
     let arrayOfWords = [];
 
-    // if ((wordSpread.length === 1)) {
       this.axiosCall(userInput)
-    // }
-    // console.log('hello')
-    // //this probably belings in ints own function
-    // this.state.wholeWordResult.map((word, i) => {
-    //   console.log(word)
-    //   console.log(regexMaster.test(word));
+
+      this.setState({
       
-      
-    // if (word.test(regexMaster) === true) {
-    //     //       this.state.filteredArray.push(word)
-    //   console.log('hello3')
-    //   }
-      // console.log('hello')
-      // return(console.log())
-
-  // })
-
-
-    // temp.map((category, i) => {
-    //   return (
-    //     <button key={i} tabIndex='0' onClick={this.handleClickForItems.bind(this, i)}>{category.title}</button>
-    //   )
-    // })
-
-
-
-
-    this.setState({
-      
-
   }, () => {
-    // console.log(this.state.wholeWordResult)
+
   })
 
-    // We want the axios call to happen only with the first letter
+  
   }
 
 
 axiosCall = function (wholeWord) {
   let temporaryList = [];
+  let modifiedList =[];
   // let variable = 's';
   axios({
     //The API has no other way of sending exact data. I need to call the whole database.
@@ -74,18 +47,17 @@ axiosCall = function (wholeWord) {
 
   }).then((response) => {
     temporaryList = response;
-    // console.log(temporaryList)
-    this.setState({
-      wholeWordResult: temporaryList.data,
-    }, () => {
-      
-        this.state.wholeWordResult.map((word, i)=>{
-          return(
-            console.log(word.word)
-          )
-        })
-    })
+    temporaryList.data.map((word, i) => {
+      return (
+        modifiedList.push(word)
+        )
+      })
 
+    this.setState({
+        wholeWordResult: modifiedList,
+    }, () => {
+      console.log(this.state.wholeWordResult)
+    })
 
   })
     .catch(function (error) {
@@ -95,15 +67,17 @@ axiosCall = function (wholeWord) {
 
 componentDidMount() {
 
-
-
 }
 
 render() {
   return (
-
     <div className='App'>
-      <UserInput onChange={this.handleTextChange} data={this.state.data} />
+      <div className = "userInput">
+        <UserInput
+          onChange={this.handleTextChange}
+          data={this.state.data} />
+      </div>
+      
     </div>
   );
 }
