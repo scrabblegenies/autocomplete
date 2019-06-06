@@ -5,36 +5,53 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 .visuallyHidden:not(:focus):not(:active) { position: absolute; width: 1px; height: 1px; margin: -1px;border: 0;padding: 0;white-space: nowrap;clip-path: inset(100%);clip: rect(00 0 0);overflow: hidden;}
 
 
+
+/* font-family: 'Nova Flat', cursive;
+font-family: 'Barlow', sans-serif; */
+
+/* #cabbe8
+#4e59dc
+#046271 */
+
+
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background: #4e59dc;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  flex-direction: column;
+  width: 80%;
 }
 
-.App-link {
-  color: #61dafb;
+.tabBar {
+  height: 30px;
+  background: lavender;
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.searchEngine {
+  background: #cabbe8;
+  height: 75vh;
+  width: 100%;
+  position: relative;
 }
+
+
+
+h1 {
+  font-family: 'Nova Flat', cursive;
+  color: #046271;
+  font-size: 80px;
+  text-shadow: 3px 3px 5px #4e59dc;
+}
+
+
+

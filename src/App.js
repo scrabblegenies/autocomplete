@@ -25,8 +25,6 @@ class App extends Component {
     })
   }
 
-
-
   axiosCall = function (wholeWord) {
     let temporaryList = [];
     // let variable = 's';
@@ -50,16 +48,27 @@ class App extends Component {
   }
 
   componentDidMount() {
-
     
-
   }
 
   render() {
     return (
 
       <div className='App'>
-        <UserInput onChange={this.handleTextChange} data={this.state.data}/>
+        <div className="container">
+          <div className="tabBar">
+            <p>hi</p>
+            <i class="far fa-question-circle"></i>
+            <i class="fas fa-window-minimize"></i>
+            <i class="far fa-window-close"></i>
+          </div>
+          <div className="searchEngine">
+            <h1>Autocomplete</h1>
+            <UserInput onChange={this.handleTextChange} data={this.state.data} />
+          </div>
+        </div>
+        
+        
       </div>
     );
   }

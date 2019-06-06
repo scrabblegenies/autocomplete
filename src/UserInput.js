@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
- 
-class UserInput extends Component {
 
-    // handleTextChange = (e) => {
-    //     this.props.onChange(e.target.value);
-    // }
+class UserInput extends Component {
 
     render(){
         return(
