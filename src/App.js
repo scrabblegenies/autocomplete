@@ -1,6 +1,7 @@
 import React, { Component} from 'react';
 import axios from 'axios';
 import './App.css';
+import windows from './windows.png'
 import UserInput from './UserInput.js';
 // import UserOutput from './UserOutput.js'
 import Clock from './Clock.js'
@@ -86,8 +87,6 @@ axiosCall = function (wholeWord) {
                   <p class="icon">{minimizeIcon}</p>
                   <p class="icon">{closeWindowIcon}</p>
                 </div>
-                {/* <i class="fas fa-window-minimize"></i>
-            <i class="fas fa-window-close"></i> */}
               </div>
               <div className="searchEngine">
                 <h1>Autocomplete</h1>
@@ -97,16 +96,18 @@ axiosCall = function (wholeWord) {
                     wholeWordResult={this.state.wholeWordResult} />
                 </div>
               </div>
-              <footer>
-                <div className="startButton">
-                  <img src="assets/windows.png" alt="retro windows logo" />
-                  <p class="start">Start</p>
-                </div>
-                <Clock />
-              </footer>
-            </div>
             </div>
           </div>
+          <footer>
+            <div className="startButton">
+              <div className="logo">
+                <img className="windows" src={windows} alt="retro windows logo" />
+              </div>
+              <p class="start">Start</p>
+            </div>
+            <Clock className="clock" />
+          </footer>
+        </div>
 
       )}
     }
