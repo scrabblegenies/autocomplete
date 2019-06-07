@@ -1,4 +1,4 @@
-import React, { Component} from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
 import windows from './windows.png'
@@ -22,6 +22,7 @@ class App extends Component {
     super()
     this.state = {
       isLoading: true,
+      globalError:true,
       wholeWordResult: [],
       wholeWord: [],
       filteredArray: []
@@ -31,49 +32,58 @@ class App extends Component {
   // event handler
   handleTextChange = (event) => {
     let userInput = event.target.value;
-    let regexMaster = RegExp(`${userInput}`)
+    let regexMaster = RegExp(`([A-Za-z0-9])`);
     let wordSpread = [...userInput];
-    let arrayOfWords = [];
+    let error = false;
 
-      this.axiosCall(userInput)
-
-      this.setState({
-      
-  }, () => {
-  })
-}
-
-
-axiosCall = function (wholeWord) {
-  let temporaryList = [];
-  let modifiedList =[];
-  // let variable = 's';
-  axios({
-    //The API has no other way of sending exact data. I need to call the whole database.
-    url: `http://api.datamuse.com/sug?max=10&s=${wholeWord}`,
-    method: 'GET',
-
-  }).then((response) => {
-    temporaryList = response;
-    temporaryList.data.map((word, i) => {
+    wordSpread.map((letter) => {
+      if (!regexMaster.test(letter) === true) {
+        error = true
+      }
       return (
-        modifiedList.push(word.word)
+        error
+      )
+    })
+    if (wordSpread.length > 0 && error === false) {
+      this.axiosCall(userInput)
+      this.setState({
+        globalError: false,
+      }, () => {
+      })
+    } else {
+      this.setState({
+        globalError: true,
+      }, () => {
+      })
+    }
+  }
+
+
+  axiosCall = function (wholeWord) {
+    let temporaryList = [];
+    let modifiedList = [];
+    axios({
+      //The API has no other way of sending exact data. I need to call the whole database.
+      url: `http://api.datamuse.com/sug?max=10&s=${wholeWord}`,
+      method: 'GET',
+
+    }).then((response) => {
+      temporaryList = response;
+      temporaryList.data.map((word, i) => {
+        return (
+          modifiedList.push(word.word)
         )
       })
 
       this.setState({
-          wholeWordResult: modifiedList,
+        wholeWordResult: modifiedList,
       }, () => {
         console.log(this.state.wholeWordResult)
       })
     })
       .catch(function (error) {
       })
-    }  
-    
-    componentDidMount() {
-
-    }
+  }
 
     render() {
       return(
@@ -95,11 +105,11 @@ axiosCall = function (wholeWord) {
                     <UserInput onChange={this.handleTextChange} data={this.state.data} />
                   </div>
                   <div className="userOutput">
-                    <UserOutput wholeWordResult={this.state.wholeWordResult} />
+                    <UserOutput wholeWordResult={this.state.wholeWordResult}
+                    globalError={this.state.globalError} />
                   </div>
                 </div>
-                
-              </div>
+              </div> 
             </div>
           </div>
           <footer>
