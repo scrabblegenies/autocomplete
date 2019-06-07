@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component} from 'react';
 import axios from 'axios';
 import './App.css';
 import UserInput from './UserInput.js';
@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faQuestionCircle} from '@fortawesome/free-solid-svg-icons'
 import { faWindowMinimize } from '@fortawesome/free-solid-svg-icons'
 import { faWindowClose } from '@fortawesome/free-solid-svg-icons'
+import UserOutput from './UserOutput.js'
 
 
 const questionMarkIcon = <FontAwesomeIcon aria-hidden="true" icon={faQuestionCircle} />
@@ -34,27 +35,29 @@ class App extends Component {
 
       this.axiosCall(userInput)
 
-      this.setState({}, () => {
+      this.setState({
+      
+  }, () => {
+  })
+}
+
+
+axiosCall = function (wholeWord) {
+  let temporaryList = [];
+  let modifiedList =[];
+  // let variable = 's';
+  axios({
+    //The API has no other way of sending exact data. I need to call the whole database.
+    url: `http://api.datamuse.com/sug?max=10&s=${wholeWord}`,
+    method: 'GET',
+
+  }).then((response) => {
+    temporaryList = response;
+    temporaryList.data.map((word, i) => {
+      return (
+        modifiedList.push(word.word)
+        )
       })
-  }
-
-
-  axiosCall = function (wholeWord) {
-    let temporaryList = [];
-    let modifiedList =[];
-    // let variable = 's';
-    axios({
-      //The API has no other way of sending exact data. I need to call the whole database.
-      url: `http://api.datamuse.com/sug?max=10&s=${wholeWord}`,
-      method: 'GET',
-
-    }).then((response) => {
-      temporaryList = response;
-      temporaryList.data.map((word, i) => {
-        return (
-          modifiedList.push(word)
-          )
-        })
 
       this.setState({
           wholeWordResult: modifiedList,
@@ -64,34 +67,50 @@ class App extends Component {
     })
       .catch(function (error) {
       })
-    }   
-  }
+    }  
+    
+    componentDidMount() {
 
-      <div className='App'>
-        {/* <UserInput onChange={this.handleTextChange} data={this.state.data} /> */}
-        <div className="container">
-          <div className="wrapper">
-            <div className="tabBar">
-              <div className="iconContainer">
-                <p class="icon">{questionMarkIcon}</p>
-                <p class="icon">{minimizeIcon}</p>
-                <p class="icon">{closeWindowIcon}</p>
-              </div>
-              {/* <i class="fas fa-window-minimize"></i>
+    }
+
+    render() {
+      return(
+        <div className='App'>
+          {/* <UserInput onChange={this.handleTextChange} data={this.state.data} /> */}
+          <div className="container">
+            <div className="wrapper">
+              <div className="tabBar">
+                <div className="iconContainer">
+                  <p class="icon">{questionMarkIcon}</p>
+                  <p class="icon">{minimizeIcon}</p>
+                  <p class="icon">{closeWindowIcon}</p>
+                </div>
+                {/* <i class="fas fa-window-minimize"></i>
             <i class="fas fa-window-close"></i> */}
-            </div>
-            <div className="searchEngine">
-              <h1>Autocomplete</h1>
-              <UserInput onChange={this.handleTextChange} data={this.state.data} />
+              </div>
+              <div className="searchEngine">
+                <h1>Autocomplete</h1>
+                <UserInput onChange={this.handleTextChange} data={this.state.data} />
+                <div className="UserOutput">
+                  <UserOutput
+                    wholeWordResult={this.state.wholeWordResult} />
+                </div>
+              </div>
+
             </div>
           </div>
+
+          <footer>
+            <img src="assets/windows.png" alt="retro windows logo" />
+            <p class="start">Start</p>
+          </footer>
         </div>
-        
-        <footer>
-          <img src="assets/windows.png" alt="retro windows logo"/>
-          <p class="start">Start</p> 
-        </footer>
-      </div>
+      )
+    }
+    
+  }
+
+      
       
 
 
