@@ -97,28 +97,20 @@ axiosCall = function (wholeWord) {
                     wholeWordResult={this.state.wholeWordResult} />
                 </div>
               </div>
-
+              <footer>
+                <div className="startButton">
+                  <img src="assets/windows.png" alt="retro windows logo" />
+                  <p class="start">Start</p>
+                </div>
+                <Clock />
+              </footer>
+            </div>
             </div>
           </div>
 
-          
-
-        
-        <footer>
-        <div className="startButton">
-          <img src="assets/windows.png" alt="retro windows logo"/>
-          <p class="start">Start</p> 
-          </div>
-           <Clock />
-        </footer>
-      </div>
- 
-    
-  }
-
-      
-      
+      )}
+    }
 
 
 
-export default App;
+export default App
