@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component} from 'react';
 import axios from 'axios';
 import './App.css';
 import UserInput from './UserInput.js';
-// import UserOutput from './UserOutput.js'
+import UserOutput from './UserOutput.js'
 
 class App extends Component {
 
@@ -29,11 +29,8 @@ class App extends Component {
       this.setState({
       
   }, () => {
-
   })
-
-  
-  }
+}
 
 
 axiosCall = function (wholeWord) {
@@ -49,14 +46,15 @@ axiosCall = function (wholeWord) {
     temporaryList = response;
     temporaryList.data.map((word, i) => {
       return (
-        modifiedList.push(word)
+        modifiedList.push(word.word)
         )
       })
+ 
 
     this.setState({
         wholeWordResult: modifiedList,
     }, () => {
-      console.log(this.state.wholeWordResult)
+        console.log(this.state.wholeWordResult)
     })
 
   })
@@ -76,6 +74,10 @@ render() {
         <UserInput
           onChange={this.handleTextChange}
           data={this.state.data} />
+      </div>
+      <div className="UserOutput">
+        <UserOutput
+           wholeWordResult={this.state.wholeWordResult}/> 
       </div>
       
     </div>
