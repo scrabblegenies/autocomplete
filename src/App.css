@@ -78,6 +78,9 @@ footer {
   width: 100%;
   background: lavender;
   font-family: 'Nova Flat', cursive;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 
