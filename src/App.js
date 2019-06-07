@@ -104,6 +104,7 @@ axiosCall = function (wholeWord) {
             <img src="assets/windows.png" alt="retro windows logo" />
             <p class="start">Start</p>
           </footer>
+          {/* <div></div> */}
         </div>
       )
     }
