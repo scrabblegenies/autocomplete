@@ -101,16 +101,6 @@ axiosCall = function (wholeWord) {
             </div>
           </div>
 
-<<<<<<< HEAD
-          <footer>
-            <img src="assets/windows.png" alt="retro windows logo" />
-            <p class="start">Start</p>
-          </footer>
-          {/* <div></div> */}
-        </div>
-      )
-    }
-=======
           
 
         
@@ -123,7 +113,6 @@ axiosCall = function (wholeWord) {
         </footer>
       </div>
  
->>>>>>> e967e1c2a2ab866061ab1841b744db890fd5a38a
     
   }
 
