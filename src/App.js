@@ -3,6 +3,7 @@ import axios from 'axios';
 import './App.css';
 import UserInput from './UserInput.js';
 // import UserOutput from './UserOutput.js'
+import Clock from './Clock.js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faQuestionCircle} from '@fortawesome/free-solid-svg-icons'
 import { faWindowMinimize } from '@fortawesome/free-solid-svg-icons'
@@ -101,6 +102,7 @@ class App extends Component {
         <footer>
           <img src="assets/windows.png" alt="retro windows logo"/>
           <p class="start">Start</p> 
+           <Clock />
         </footer>
       </div>
     );
