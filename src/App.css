@@ -98,7 +98,7 @@ path {
 h1 {
   font-family: 'Nova Flat', cursive;
   color: #046271;
-  font-size: 80px;
+  font-size: 5.5rem;
   text-shadow: 3px 3px 5px #4e59dc;
 }
 
@@ -151,6 +151,22 @@ img {
     margin: 0;
     text-align: center;
     padding: 3px;
+}
+
+
+@media (max-width: 320px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .inputsContainer {
+    width: 80%;
+  }
+
+  .searchEngine {
+    height: 60vh;
+  }
+
 }
 
 
