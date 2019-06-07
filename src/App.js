@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
+import windows from './windows.png'
 import UserInput from './UserInput.js';
 // import UserOutput from './UserOutput.js'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faQuestionCircle} from '@fortawesome/free-solid-svg-icons'
-// import { faWindowMinimize } from '@fortawesome/free-solid-svg-icons'
-// import { faWindowClose } from '@fortawesome/free-solid-svg-icons'
+import Clock from './Clock.js'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faQuestionCircle} from '@fortawesome/free-solid-svg-icons'
+import { faWindowMinimize } from '@fortawesome/free-solid-svg-icons'
+import { faWindowClose } from '@fortawesome/free-solid-svg-icons'
 import UserOutput from './UserOutput.js'
 
 
-// const questionMarkIcon = <FontAwesomeIcon aria-hidden="true" icon={faQuestionCircle} />
-// const minimizeIcon = <FontAwesomeIcon aria-hidden="true" icon={faWindowMinimize} />
-// const closeWindowIcon = <FontAwesomeIcon aria-hidden="true" icon={faWindowClose} />
+const questionMarkIcon = <FontAwesomeIcon aria-hidden="true" icon={faQuestionCircle} />
+const minimizeIcon = <FontAwesomeIcon aria-hidden="true" icon={faWindowMinimize} />
+const closeWindowIcon = <FontAwesomeIcon aria-hidden="true" icon={faWindowClose} />
 
 
 class App extends Component {
@@ -83,19 +85,18 @@ class App extends Component {
       })
   }
 
-  componentDidMount() {
-  }
-  render() {
-    return (
-      <div className='App'>
-        {/* <UserInput onChange={this.handleTextChange} data={this.state.data} /> */}
-        <div className="container">
-          <div className="wrapper">
-            <div className="tabBar">
-              <div className="iconContainer">
-                {/* <p class="icon">{questionMarkIcon}</p> */}
-                {/* <p class="icon">{minimizeIcon}</p> */}
-                {/* <p class="icon">{closeWindowIcon}</p> */}
+    render() {
+      return(
+        <div className='App'>
+          {/* <UserInput onChange={this.handleTextChange} data={this.state.data} /> */}
+          <div className="container">
+            <div className="wrapper">
+              <div className="tabBar">
+                <div className="iconContainer">
+                  <p class="icon">{questionMarkIcon}</p>
+                  <p class="icon">{minimizeIcon}</p>
+                  <p class="icon">{closeWindowIcon}</p>
+                </div>
               </div>
               {/* <i class="fas fa-window-minimize"></i>
             <i class="fas fa-window-close"></i> */}
@@ -109,23 +110,21 @@ class App extends Component {
                   globalError={this.state.globalError} />
               </div>
             </div>
-
           </div>
+          <footer>
+            <div className="startButton">
+              <div className="logo">
+                <img className="windows" src={windows} alt="retro windows logo" />
+              </div>
+              <p class="start">Start</p>
+            </div>
+            <Clock className="clock" />
+          </footer>
         </div>
 
-        <footer>
-          <img src="assets/windows.png" alt="retro windows logo" />
-          <p class="start">Start</p>
-        </footer>
-      </div>
-    )
-  }
-
-}
+      )}
+    }
 
 
 
-
-
-
-export default App;
+export default App

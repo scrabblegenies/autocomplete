@@ -27,13 +27,11 @@ body {
   text-align: center;
   display: flex;
   justify-content: center;
-  margin-top: 8%;
+  align-items: center;
 }
 
 .wrapper {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
   width: 80%;
 }
@@ -78,6 +76,51 @@ footer {
   width: 100%;
   background: lavender;
   font-family: 'Nova Flat', cursive;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
+.startButton {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 1px solid darkgray; 
+  box-shadow: 1px 1px 3px darkgray;
+  padding: 2px;
+}
+
+.logo {
+  width: 30px;
+  margin-right: 10px;
+  padding-left: 5px;
+}
+
+img {
+  width: 100%;
+  max-width: 100%
+}
+
+.start {
+  margin: 0;
+  padding-right: 5px;
+}
+
+.clock {
+  margin-right: 20px;
+  border: 1px solid darkgray; 
+  box-shadow: 1px 1px 3px darkgray;
+}
+
+.clock p {
+    margin: 0;
+    text-align: center;
+    padding: 3px;
+}
+
+
 
 
