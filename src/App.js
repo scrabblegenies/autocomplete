@@ -2,11 +2,20 @@ import React, { Component} from 'react';
 import axios from 'axios';
 import './App.css';
 import UserInput from './UserInput.js';
+// import UserOutput from './UserOutput.js'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faQuestionCircle} from '@fortawesome/free-solid-svg-icons'
+import { faWindowMinimize } from '@fortawesome/free-solid-svg-icons'
+import { faWindowClose } from '@fortawesome/free-solid-svg-icons'
 import UserOutput from './UserOutput.js'
 
+
+const questionMarkIcon = <FontAwesomeIcon aria-hidden="true" icon={faQuestionCircle} />
+const minimizeIcon = <FontAwesomeIcon aria-hidden="true" icon={faWindowMinimize} />
+const closeWindowIcon = <FontAwesomeIcon aria-hidden="true" icon={faWindowClose} />
+
+
 class App extends Component {
-
-
   constructor() {
     super()
     this.state = {
@@ -49,40 +58,61 @@ axiosCall = function (wholeWord) {
         modifiedList.push(word.word)
         )
       })
- 
 
-    this.setState({
-        wholeWordResult: modifiedList,
-    }, () => {
+      this.setState({
+          wholeWordResult: modifiedList,
+      }, () => {
         console.log(this.state.wholeWordResult)
+      })
     })
+      .catch(function (error) {
+      })
+    }  
+    
+    componentDidMount() {
 
-  })
-    .catch(function (error) {
-    })
+    }
 
-}
+    render() {
+      return(
+        <div className='App'>
+          {/* <UserInput onChange={this.handleTextChange} data={this.state.data} /> */}
+          <div className="container">
+            <div className="wrapper">
+              <div className="tabBar">
+                <div className="iconContainer">
+                  <p class="icon">{questionMarkIcon}</p>
+                  <p class="icon">{minimizeIcon}</p>
+                  <p class="icon">{closeWindowIcon}</p>
+                </div>
+                {/* <i class="fas fa-window-minimize"></i>
+            <i class="fas fa-window-close"></i> */}
+              </div>
+              <div className="searchEngine">
+                <h1>Autocomplete</h1>
+                <UserInput onChange={this.handleTextChange} data={this.state.data} />
+                <div className="UserOutput">
+                  <UserOutput
+                    wholeWordResult={this.state.wholeWordResult} />
+                </div>
+              </div>
 
-componentDidMount() {
+            </div>
+          </div>
 
-}
+          <footer>
+            <img src="assets/windows.png" alt="retro windows logo" />
+            <p class="start">Start</p>
+          </footer>
+        </div>
+      )
+    }
+    
+  }
 
-render() {
-  return (
-    <div className='App'>
-      <div className = "userInput">
-        <UserInput
-          onChange={this.handleTextChange}
-          data={this.state.data} />
-      </div>
-      <div className="UserOutput">
-        <UserOutput
-           wholeWordResult={this.state.wholeWordResult}/> 
-      </div>
       
-    </div>
-  );
-}
-}
+      
+
+
 
 export default App;
