@@ -3,6 +3,7 @@ import axios from 'axios';
 import './App.css';
 import UserInput from './UserInput.js';
 // import UserOutput from './UserOutput.js'
+import Clock from './Clock.js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faQuestionCircle} from '@fortawesome/free-solid-svg-icons'
 import { faWindowMinimize } from '@fortawesome/free-solid-svg-icons'
@@ -100,6 +101,7 @@ axiosCall = function (wholeWord) {
             </div>
           </div>
 
+<<<<<<< HEAD
           <footer>
             <img src="assets/windows.png" alt="retro windows logo" />
             <p class="start">Start</p>
@@ -108,6 +110,20 @@ axiosCall = function (wholeWord) {
         </div>
       )
     }
+=======
+          
+
+        
+        <footer>
+        <div className="startButton">
+          <img src="assets/windows.png" alt="retro windows logo"/>
+          <p class="start">Start</p> 
+          </div>
+           <Clock />
+        </footer>
+      </div>
+ 
+>>>>>>> e967e1c2a2ab866061ab1841b744db890fd5a38a
     
   }
 
