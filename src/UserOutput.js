@@ -12,7 +12,8 @@ class UserOutput extends Component {
                         return (
                             <li
                                 key={index}
-                                className="autocompleteItem">{item}</li>
+                                className="autocompleteItem"
+                                tabindex="0">{item}</li>
                         )
                     }))
                 /* {this.props.wholeWordResult.map((item, index)=>{
