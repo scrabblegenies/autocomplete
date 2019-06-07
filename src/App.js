@@ -12,71 +12,60 @@ import { faWindowClose } from '@fortawesome/free-solid-svg-icons'
 const questionMarkIcon = <FontAwesomeIcon aria-hidden="true" icon={faQuestionCircle} />
 const minimizeIcon = <FontAwesomeIcon aria-hidden="true" icon={faWindowMinimize} />
 const closeWindowIcon = <FontAwesomeIcon aria-hidden="true" icon={faWindowClose} />
+
+
 class App extends Component {
-
-
   constructor() {
     super()
     this.state = {
       isLoading: true,
       wholeWordResult: [],
       wholeWord: [],
+      filteredArray: []
     }
   }
 
   // event handler
   handleTextChange = (event) => {
     let userInput = event.target.value;
+    let regexMaster = RegExp(`${userInput}`)
     let wordSpread = [...userInput];
     let arrayOfWords = [];
 
-    if ((wordSpread.length === 1)) {
-      this.axiosCall(wordSpread[0])
-    }
-    this.setState({
+      this.axiosCall(userInput)
 
-    }, () => {
-        console.log(this.state.wholeWordResult)
-    })
-
-    // We want the axios call to happen only with the first letter
+      this.setState({}, () => {
+      })
   }
 
 
   axiosCall = function (wholeWord) {
     let temporaryList = [];
+    let modifiedList =[];
     // let variable = 's';
     axios({
       //The API has no other way of sending exact data. I need to call the whole database.
-      url: `http://api.datamuse.com/sug?max=1000&s=${wholeWord}`,
+      url: `http://api.datamuse.com/sug?max=10&s=${wholeWord}`,
       method: 'GET',
 
     }).then((response) => {
       temporaryList = response;
-      // console.log(temporaryList)
+      temporaryList.data.map((word, i) => {
+        return (
+          modifiedList.push(word)
+          )
+        })
+
       this.setState({
-        wholeWordResult: temporaryList.data,
+          wholeWordResult: modifiedList,
       }, () => {
         console.log(this.state.wholeWordResult)
       })
-
-
     })
       .catch(function (error) {
-
       })
-
+    }   
   }
-
-  componentDidMount() {
-
-
-
-    
-  }
-
-  render() {
-    return (
 
       <div className='App'>
         {/* <UserInput onChange={this.handleTextChange} data={this.state.data} /> */}
@@ -103,8 +92,8 @@ class App extends Component {
           <p class="start">Start</p> 
         </footer>
       </div>
-    );
-  }
-}
+      
+
+
 
 export default App;
