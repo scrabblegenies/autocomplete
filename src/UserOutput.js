@@ -10,7 +10,6 @@ class UserOutput extends Component {
                             key = {index}
                             className="autocompleteItem">{item}</li>
                     ) 
-                    
                 })
             }
             </Fragment>

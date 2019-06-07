@@ -90,11 +90,15 @@ axiosCall = function (wholeWord) {
               </div>
               <div className="searchEngine">
                 <h1>Autocomplete</h1>
-                <UserInput onChange={this.handleTextChange} data={this.state.data} />
-                <div className="UserOutput">
-                  <UserOutput
-                    wholeWordResult={this.state.wholeWordResult} />
+                <div className="inputsContainer">
+                  <div className="userInput">
+                    <UserInput onChange={this.handleTextChange} data={this.state.data} />
+                  </div>
+                  <div className="userOutput">
+                    <UserOutput wholeWordResult={this.state.wholeWordResult} />
+                  </div>
                 </div>
+                
               </div>
             </div>
           </div>

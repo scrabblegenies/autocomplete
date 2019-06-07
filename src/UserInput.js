@@ -10,6 +10,7 @@ class UserInput extends Component {
                     type="text"
                     onChange={this.props.onChange}
                     value = {this.props.firstLetter}
+                    placeholder="start typing something"
                     />
                 </form>
             </div>
