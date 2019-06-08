@@ -3,13 +3,14 @@ import axios from 'axios';
 import './App.css';
 import windows from './windows.png'
 import UserInput from './UserInput.js';
-// import UserOutput from './UserOutput.js'
+import Swal from 'sweetalert2';
 import Clock from './Clock.js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faQuestionCircle} from '@fortawesome/free-solid-svg-icons'
 import { faWindowMinimize } from '@fortawesome/free-solid-svg-icons'
 import { faWindowClose } from '@fortawesome/free-solid-svg-icons'
 import UserOutput from './UserOutput.js'
+
 
 
 
@@ -51,12 +52,15 @@ class App extends Component {
         globalError: false,
       }, () => {
       })
-    } else {
-      this.setState({
-        globalError: true,
-      }, () => {
-      })
-    }
+    } else 
+        this.setState({
+          globalError: true,
+        }, () => {
+        })
+  }
+
+  clearInput = () => {
+    document.getElementById('main-form').reset();
   }
 
 
@@ -75,15 +79,24 @@ class App extends Component {
           modifiedList.push(word.word)
         )
       })
-
       this.setState({
         wholeWordResult: modifiedList,
       }, () => {
         console.log(this.state.wholeWordResult)
       })
+      if (this.state.wholeWordResult.length === 0) {
+        return Swal.fire({
+          title: `Want to Try Again?`,
+          text: `It looks like this word might not exist!`,
+          type: 'warning',
+          confirmButtonText: 'Okay'
+        })
+
+      }
     })
       .catch(function (error) {
       })
+    
   }
 
     render() {
@@ -103,11 +116,15 @@ class App extends Component {
                 <h1>Autocomplete</h1>
                 <div className="inputsContainer">
                   <div className="userInput">
-                    <UserInput onChange={this.handleTextChange} data={this.state.data} />
+                    <UserInput
+                      id="userInput"
+                      onChange={this.handleTextChange}
+                      data={this.state.data} />
                   </div>
                   <div className="userOutput">
-                    <UserOutput wholeWordResult={this.state.wholeWordResult}
-                    globalError={this.state.globalError} />
+                    <UserOutput
+                      wholeWordResult={this.state.wholeWordResult}
+                      globalError={this.state.globalError} />
                   </div>
                 </div>
               </div> 
