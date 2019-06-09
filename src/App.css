@@ -34,6 +34,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 80%;
+  box-shadow: 3px 3px 3px black;
 }
 
 .tabBar {
@@ -62,6 +63,38 @@ path {
   width: 100%;
   position: relative;
 }
+
+.inputsContainer {
+  width: 40%;
+  /* border: 1px solid black; */
+  margin: 0 auto;
+}
+
+.userInput input {
+  border: none;
+  background: lavender;
+  width: 100%;
+  padding: 10px;
+  font-family: 'Barlow', sans-serif; 
+  border: 2px solid #4e59dc;
+}
+
+.userOutput {
+  list-style: none;
+  text-align: left;
+  width: 100%;
+  border-top: none;
+  background: lavender;
+  
+}
+
+.userOutput li {
+  font-family: 'Barlow', sans-serif; 
+  color: #046271;
+  padding-left: 10px;
+  padding-bottom: 5px;
+}
+
 
 h1 {
   font-family: 'Nova Flat', cursive;
