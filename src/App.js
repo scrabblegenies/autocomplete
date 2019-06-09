@@ -14,6 +14,7 @@ import UserOutput from './UserOutput.js'
 
 
 
+
 const questionMarkIcon = <FontAwesomeIcon aria-hidden="true" icon={faQuestionCircle} />
 const minimizeIcon = <FontAwesomeIcon aria-hidden="true" icon={faWindowMinimize} />
 const closeWindowIcon = <FontAwesomeIcon aria-hidden="true" icon={faWindowClose} />
