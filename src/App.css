@@ -103,7 +103,7 @@ path {
 h1 {
   font-family: 'Nova Flat', cursive;
   color: #046271;
-  font-size: 80px;
+  font-size: 5.5rem;
   text-shadow: 3px 3px 5px #4e59dc;
 }
 
@@ -129,6 +129,16 @@ footer {
   box-shadow: 1px 1px 3px darkgray;
   padding: 2px;
 }
+.startButton:hover {
+  border-top: transparent;
+  border-left: transparent;
+  border-bottom: 1.5px solid #fff;
+  border-right: 1.5px solid #fff;
+  box-shadow: inset 1.5px 1.5px 2px 0px rgba(0, 0, 0, 0.9);
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAG0lEQVQYV2N88ODBf3l5eQbG/////3/48CEDAF5KCp65uusVAAAAAElFTkSuQmCC
+) repeat;
+}
+
 
 .logo {
   width: 30px;
@@ -147,9 +157,15 @@ img {
 }
 
 .clock {
+  width: 106px;
   margin-right: 20px;
-  border: 1px solid darkgray; 
-  box-shadow: 1px 1px 3px darkgray;
+  border-top: transparent;
+  border-left: transparent;
+  border-bottom: 1.5px solid #fff;
+  border-right: 1.5px solid #fff;
+  box-shadow: inset 1.5px 1.5px 2px 0px rgba(0, 0, 0, 0.9);
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAG0lEQVQYV2N88ODBf3l5eQbG/////3/48CEDAF5KCp65uusVAAAAAElFTkSuQmCC
+) repeat;
 }
 
 .clock p {
@@ -159,41 +175,71 @@ img {
 }
 
 
-.swal2-title {
-  margin: 0;
-  font-size: 1rem;
-  text-align: left;
+@media (max-width: 733px) {
+  h1 {
+  font-size: 5rem;
 }
 
-.swal2-icon.swal2-warning::before {
-  content: "X";
+.inputsContainer {
+  width: 80%;
 }
 
-.swal2-icon {
-
-border-radius: 0%;
-width: 1rem;
-height: 1rem;
 }
 
-.swal2-icon::before {
-/* - font-size: 3.75em; */
-font-size: 1em;
-padding: 1%;
-}
 
-.swal2-header {
-display: flex;
-align-items: center;
-flex-direction: row-reverse;
-justify-content: space-between;
-background-image: linear-gradient(to left, #cabbe8, #b9a7e6, #a694e3, #9081e1, #786fdf, #5e6cda, #4069d4, #0066ce, #006abc, #006aa4, #006789, #046271);
-padding: 5px;
-}
 
-.swal2-icon.swal2-warning {
+
+@media (max-width: 698px) {
+.userOutput li {
+  font-family: 'Barlow', sans-serif;
   color: #046271;
-  background: lavender;
-  box-shadow: 1px 1px 1px darkgray;
-  font-weight: 700;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  font-size: 0.75rem;
+}
+}
+
+@media (max-width: 669px) {
+
+  h1 {
+    font-size: 4rem;
+  }
+
+}
+
+@media (max-width: 578px) {
+  .inputsContainer {
+    width: 65%;
+  }
+}
+
+@media (max-width: 565px) {
+
+.userInput input {
+  font-size: 0.75rem;
+}
+
+}
+
+
+@media (max-width: 539px) {
+
+h1 {
+  font-size: 3rem;
+}
+}
+
+
+@media (max-width: 400px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .inputsContainer {
+    width: 80%;
+  }
+
+.searchEngine {
+  height: 75vh;
+}
 }
