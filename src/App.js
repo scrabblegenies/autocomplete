@@ -10,6 +10,7 @@ import { faQuestionCircle} from '@fortawesome/free-solid-svg-icons'
 import { faWindowMinimize } from '@fortawesome/free-solid-svg-icons'
 import { faWindowClose } from '@fortawesome/free-solid-svg-icons'
 import UserOutput from './UserOutput.js'
+import Error from './Error.js'
 
 
 
@@ -25,6 +26,7 @@ class App extends Component {
     this.state = {
       isLoading: true,
       globalError:true,
+      returnError: false,
       wholeWordResult: [],
       wholeWord: [],
       filteredArray: []
@@ -52,15 +54,18 @@ class App extends Component {
         globalError: false,
       }, () => {
       })
-    } else 
+    } else if (this.state.wholeWordResult.length === 0){
+      this.setState({
+        returnError: true,
+      }, () => {
+      })
+      
+    }
+    else 
         this.setState({
           globalError: true,
         }, () => {
         })
-  }
-
-  clearInput = () => {
-    document.getElementById('main-form').reset();
   }
 
 
@@ -84,15 +89,10 @@ class App extends Component {
       }, () => {
         console.log(this.state.wholeWordResult)
       })
-      if (this.state.wholeWordResult.length === 0) {
-        return Swal.fire({
-          title: `Want to Try Again?`,
-          text: `It looks like this word might not exist!`,
-          type: 'warning',
-          confirmButtonText: 'Okay'
-        })
-
-      }
+      // if (this.state.wholeWordResult.length === 0) {
+      //   <Error 
+      //     errorAlert = {this.errorAlert}/>
+      // }
     })
       .catch(function (error) {
       })
@@ -126,6 +126,7 @@ class App extends Component {
                       wholeWordResult={this.state.wholeWordResult}
                       globalError={this.state.globalError} />
                   </div>
+                  <Error/>
                 </div>
               </div> 
             </div>
