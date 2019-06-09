@@ -13,7 +13,6 @@ import UserOutput from './UserOutput.js'
 import Error from './Error.js'
 
 
-
 const questionMarkIcon = <FontAwesomeIcon aria-hidden="true" icon={faQuestionCircle} />
 const minimizeIcon = <FontAwesomeIcon aria-hidden="true" icon={faWindowMinimize} />
 const closeWindowIcon = <FontAwesomeIcon aria-hidden="true" icon={faWindowClose} />
@@ -39,6 +38,7 @@ class App extends Component {
     let wordSpread = [...userInput];
     let error = false;
 
+
     wordSpread.map((letter) => {
       if (!regexMaster.test(letter) === true) {
         error = true
@@ -51,6 +51,7 @@ class App extends Component {
       this.axiosCall(userInput)
       this.setState({
         globalError: false,
+        
       }, () => {
       })
     }  
@@ -60,13 +61,14 @@ class App extends Component {
       }, () => {
       })
     }
-  }
 
+  }
 
 
   axiosCall = function (wholeWord) {
     let temporaryList = [];
     let modifiedList = [];
+    let blankError = false;
     axios({
       //The API has no other way of sending exact data. I need to call the whole database.
       url: `http://api.datamuse.com/sug?max=10&s=${wholeWord}`,
@@ -74,7 +76,6 @@ class App extends Component {
 
     }).then((response) => {
       temporaryList = response;
-
       temporaryList.data.map((word, i) => {
         return (
           modifiedList.push(word.word)
@@ -97,25 +98,18 @@ class App extends Component {
       //   alert("this is not right")
       // }
 
+      console.log(this.state.wholeWordResult.length)
+      if (this.state.wholeWordResult.length === 0) {
+        blankError = true
+      } else {
+        blankError = false
+      }
 
       this.setState({
         wholeWordResult: modifiedList,
+        returnError: blankError
       }, () => {
-
       })
-      if (this.state.wholeWordResult.length === 0) {
-        this.setState({
-          returnError: true
-        },()=>{
-            console.log( `hello1`)
-        })
-      } else {
-        this.setState({
-          returnError: false,
-        }, ()=> {
-            console.log(`hello2`)
-        })
-      }
     })
       .catch(function (error) {
       })

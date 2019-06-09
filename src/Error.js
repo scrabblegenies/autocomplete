@@ -6,7 +6,15 @@ class Error extends Component {
         return (
             <Fragment>
         
-                {this.props.returnError ? (alert(`there is a problem`)) : (<h2>this is fine</h2>)}
+                {this.props.returnError ? 
+                    (<div class="errorPopup">
+                    <div class="topBanner">
+                        <p class="error">ERROR</p>
+                        <p class="x">X</p>
+                    </div>
+                    <p class="errorMessage">The word you have entered has no results.</p>
+                </div>) 
+                : (<h2>this is fine</h2>)}
             </Fragment>
 
         )
