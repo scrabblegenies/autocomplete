@@ -15,9 +15,9 @@ font-family: 'Barlow', sans-serif; */
 
 
 
-.App {
-  
-}
+
+
+
 
 body {
   background: #4e59dc;
@@ -32,6 +32,7 @@ html{
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
 .wrapper {
@@ -39,6 +40,8 @@ html{
   flex-direction: column;
   width: 80%;
   box-shadow: 3px 3px 3px black;
+    cursor: url('./cursor.png'),
+    default;
 }
 
 .tabBar {
@@ -117,6 +120,7 @@ footer {
   justify-content: space-between;
   align-items: center;
   height: 6vh;
+  
 }
 
 .startButton {
