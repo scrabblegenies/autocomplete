@@ -124,6 +124,16 @@ footer {
   box-shadow: 1px 1px 3px darkgray;
   padding: 2px;
 }
+.startButton:hover {
+  border-top: transparent;
+  border-left: transparent;
+  border-bottom: 1.5px solid #fff;
+  border-right: 1.5px solid #fff;
+  box-shadow: inset 1.5px 1.5px 2px 0px rgba(0, 0, 0, 0.9);
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAG0lEQVQYV2N88ODBf3l5eQbG/////3/48CEDAF5KCp65uusVAAAAAElFTkSuQmCC
+) repeat;
+}
+
 
 .logo {
   width: 30px;
@@ -142,9 +152,15 @@ img {
 }
 
 .clock {
+  width: 106px;
   margin-right: 20px;
-  border: 1px solid darkgray; 
-  box-shadow: 1px 1px 3px darkgray;
+  border-top: transparent;
+  border-left: transparent;
+  border-bottom: 1.5px solid #fff;
+  border-right: 1.5px solid #fff;
+  box-shadow: inset 1.5px 1.5px 2px 0px rgba(0, 0, 0, 0.9);
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAG0lEQVQYV2N88ODBf3l5eQbG/////3/48CEDAF5KCp65uusVAAAAAElFTkSuQmCC
+) repeat;
 }
 
 .clock p {
@@ -207,12 +223,6 @@ h1 {
   font-size: 3rem;
 }
 }
-
-
-
-
-
-
 
 
 @media (max-width: 400px) {
