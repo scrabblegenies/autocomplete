@@ -15,9 +15,9 @@ font-family: 'Barlow', sans-serif; */
 
 
 
-.App {
-  
-}
+
+
+
 
 body {
   background: #4e59dc;
@@ -32,6 +32,7 @@ html{
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
 .wrapper {
@@ -39,6 +40,8 @@ html{
   flex-direction: column;
   width: 80%;
   box-shadow: 3px 3px 3px black;
+    cursor: url('./cursor.png'),
+    default;
 }
 
 .tabBar {
@@ -117,6 +120,7 @@ footer {
   justify-content: space-between;
   align-items: center;
   height: 6vh;
+  
 }
 
 .startButton {
@@ -174,6 +178,45 @@ img {
     text-align: center;
     padding: 3px;
 }
+
+/* ERROR MESSAGE POPUP */
+
+.errorPopup {
+    width: 400px;
+    height: 175px;
+    background: lavender;
+    margin: 0 auto;
+    margin-top: 200px;
+    box-shadow: 3px 3px 10px darkgray;
+    font-family: 'Barlow', sans-serif;
+}
+
+.topBanner {
+    display: flex;
+    justify-content: space-between;
+    background-image: linear-gradient(to left, #cabbe8, #b9a7e6, #a694e3, #9081e1, #786fdf, #5e6cda, #4069d4, #0066ce, #006abc, #006aa4, #006789, #046271);
+    padding: 5px;
+}
+
+.topBanner p {
+    margin: 0;
+}
+
+.error{
+    color: lavender;
+}
+
+.x {
+    background: lavender; 
+    padding: 0 5px;
+    color: #046271;
+    font-weight: bold;
+}
+
+.errorMessage {
+    padding-left: 10px;
+}
+
 
 
 @media (max-width: 733px) {
