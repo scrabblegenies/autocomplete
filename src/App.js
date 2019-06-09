@@ -60,18 +60,6 @@ class App extends Component {
       }, () => {
       })
     }
-    if (this.state.wholeWordResult.length === 0) {
-      this.setState({
-        returnError: true,
-      }, () => {
-      })
-    }
-      else{
-        this.setState({
-          returnError: false,
-        }, () => {
-        })
-      }  
   }
 
 
@@ -115,15 +103,25 @@ class App extends Component {
       }, () => {
 
       })
-      // if (this.state.wholeWordResult.length === 0) {
-      //   <Error 
-      //     errorAlert = {this.errorAlert}/>
-      // }
+      if (this.state.wholeWordResult.length === 0) {
+        this.setState({
+          returnError: true
+        },()=>{
+            console.log( `hello1`)
+        })
+      } else {
+        this.setState({
+          returnError: false,
+        }, ()=> {
+            console.log(`hello2`)
+        })
+      }
     })
       .catch(function (error) {
       })
     
   }
+
 
     render() {
       return(
