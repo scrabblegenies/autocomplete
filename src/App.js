@@ -26,7 +26,7 @@ class App extends Component {
     this.state = {
       isLoading: true,
       globalError:true,
-      returnError: false,
+      returnError: true,
       wholeWordResult: [],
       wholeWord: [],
       filteredArray: []
