@@ -14,7 +14,6 @@ import Error from './Error.js'
 
 
 
-
 const questionMarkIcon = <FontAwesomeIcon aria-hidden="true" icon={faQuestionCircle} />
 const minimizeIcon = <FontAwesomeIcon aria-hidden="true" icon={faWindowMinimize} />
 const closeWindowIcon = <FontAwesomeIcon aria-hidden="true" icon={faWindowClose} />
@@ -25,7 +24,8 @@ class App extends Component {
     super()
     this.state = {
       isLoading: true,
-      globalError:true,
+      globalError:false,
+      returnError: false,
       wholeWordResult: [],
       wholeWord: [],
       filteredArray: []
@@ -47,19 +47,33 @@ class App extends Component {
         error
       )
     })
-    if ((wordSpread.length > 0 && error === false) || (wordSpread.length > 0 && this.state.wholeWordResult.length === 0)) {
+    if (wordSpread.length > 0 && error === false)  {
       this.axiosCall(userInput)
       this.setState({
         globalError: false,
       }, () => {
       })
     }  
-    else 
+    else {
+      this.setState({
+        globalError: true,
+      }, () => {
+      })
+    }
+    if (this.state.wholeWordResult.length === 0) {
+      this.setState({
+        returnError: true,
+      }, () => {
+      })
+    }
+      else{
         this.setState({
-          globalError: true,
+          returnError: false,
         }, () => {
         })
+      }  
   }
+
 
 
   axiosCall = function (wholeWord) {
@@ -139,7 +153,7 @@ class App extends Component {
                       globalError={this.state.globalError} />
                   </div>
                   <Error
-                    globalError={this.state.globalError}/>
+                    returnError={this.state.returnError}/>
                 </div>
               </div> 
             </div>
