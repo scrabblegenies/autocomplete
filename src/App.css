@@ -154,7 +154,68 @@ img {
 }
 
 
-@media (max-width: 380px) {
+@media (max-width: 733px) {
+  h1 {
+  font-size: 5rem;
+}
+
+.inputsContainer {
+  width: 80%;
+}
+
+}
+
+
+
+
+@media (max-width: 698px) {
+.userOutput li {
+  font-family: 'Barlow', sans-serif;
+  color: #046271;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  font-size: 0.75rem;
+}
+}
+
+@media (max-width: 669px) {
+
+  h1 {
+    font-size: 4rem;
+  }
+
+}
+
+@media (max-width: 578px) {
+  .inputsContainer {
+    width: 65%;
+  }
+}
+
+@media (max-width: 565px) {
+
+.userInput input {
+  font-size: 0.75rem;
+}
+
+}
+
+
+@media (max-width: 539px) {
+
+h1 {
+  font-size: 3rem;
+}
+}
+
+
+
+
+
+
+
+
+@media (max-width: 400px) {
   h1 {
     font-size: 2rem;
   }
