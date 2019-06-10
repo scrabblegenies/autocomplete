@@ -195,10 +195,7 @@ class App extends Component {
             </div>
           </div>
           </div>
-         
-
-            
-<footer>
+          <footer>
             <StartButton handleMouseDown={this.handleMouseDown}/>
             <StartMenu menuVisibility={this.state.visible} />
             <Clock className="clock" />
