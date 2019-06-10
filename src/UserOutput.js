@@ -3,6 +3,9 @@ import React, { Component, Fragment } from 'react';
 
 class UserOutput extends Component {
 
+
+    // copiedItem = this.props.selectedItem;
+
     render() {
         return (
             <Fragment>
@@ -20,14 +23,7 @@ class UserOutput extends Component {
                                 onClick={this.props.handleClick}>{item}</li>
                         )
                     }))
-                /* {this.props.wholeWordResult.map((item, index)=>{
-                    return(
-                        <li
-                            key = {index}
-                            className="autocompleteItem">{item}</li>
-                    ) 
-                }) */
-            }
+                }
             </Fragment>
         );
     }
