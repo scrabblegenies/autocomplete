@@ -46,7 +46,7 @@ html{
 
 .tabBar {
   height: 30px;
-  background: lavender;
+  background-image: linear-gradient(to right, #1a2da4, #0046a6, #005499, #005c84, #046271);
   width: 100%;
 }
 
@@ -61,7 +61,7 @@ html{
 }
 
 path {
-  fill: #046271;
+  fill: lavender;
 }
 
 .searchEngine {
@@ -162,7 +162,7 @@ img {
 }
 
 .clock {
-  width: 106px;
+  width: 112px;
   margin-right: 20px;
   border-top: transparent;
   border-left: transparent;
