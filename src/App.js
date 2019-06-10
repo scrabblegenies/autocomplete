@@ -114,6 +114,7 @@ class App extends Component {
       method: 'GET',
 
     }).then((response) => {
+      console.log('Call is made')
       temporaryList = response;
       temporaryList.data.map((word, i) => {
         return (
