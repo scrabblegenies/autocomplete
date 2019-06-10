@@ -106,12 +106,17 @@ h1 {
   background: lavender;
 }
 
-.userOutput li {
+.userOutput button {
+  border: none;
   font-family: 'Barlow', sans-serif; 
   color: #046271;
   padding-left: 10px;
   padding-bottom: 5px;
-  
+  text-align: left;
+  width: 100%;
+}
+.userOutput button:focus{
+  border: 1px dotted #046271;
 }
 
 .letterOrNumber {
@@ -335,13 +340,10 @@ img {
     margin-right: 20px;
     margin-top: 10px;
     line-height: 1.8;
-}
-
-
-  
+}  
   
 
-
+/* MEDIA QUERIES */
 
 @media (max-width: 733px) {
   h1 {
@@ -353,8 +355,6 @@ img {
 }
 
 }
-
-
 
 
 @media (max-width: 698px) {
@@ -421,8 +421,3 @@ h1 {
   bottom: 0;
 }
 
-/* .wikiPopup{
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-} */
