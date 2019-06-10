@@ -373,3 +373,9 @@ h1 {
   position: absolute;
   bottom: 0;
 }
+
+.wikiPopup{
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
