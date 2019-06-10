@@ -190,7 +190,7 @@ class App extends Component {
                 </div>
                 <Error
                   returnError={this.state.returnError}
-                  handleClick={this.handleClick} />
+                  closePopup={this.closePopup} />
               </div>
             </div>
           </div>

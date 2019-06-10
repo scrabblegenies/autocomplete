@@ -13,7 +13,7 @@ class Error extends Component {
                             <p class="error">ERROR</p>
                             <button
                                 class="x"
-                                onClick={this.props.handleClick}>X</button>
+                                onClick={this.props.closePopup}>X</button>
                         </div>
                         <p class="errorMessage">The word you have entered has no results.</p>
                     </div>) 
