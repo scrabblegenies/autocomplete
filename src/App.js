@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
-import windows from './windows.png'
 import UserInput from './UserInput.js';
 import Swal from 'sweetalert2';
-import Clock from './Clock.js'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
-import { faWindowMinimize } from '@fortawesome/free-solid-svg-icons'
-import { faWindowClose } from '@fortawesome/free-solid-svg-icons'
-import UserOutput from './UserOutput.js'
-import Error from './Error.js'
+
+import Clock from './Clock.js';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faQuestionCircle} from '@fortawesome/free-solid-svg-icons';
+import { faWindowMinimize } from '@fortawesome/free-solid-svg-icons';
+import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
+import UserOutput from './UserOutput.js';
+import Error from './Error.js';
+import StartButton from './StartButton.js';
+import StartMenu from './StartMenu.js';
+
 
 
 const questionMarkIcon = <FontAwesomeIcon aria-hidden="true" icon={faQuestionCircle} />
@@ -27,8 +30,13 @@ class App extends Component {
       returnError: false,
       wholeWordResult: [],
       wholeWord: [],
-      filteredArray: []
+      filteredArray: [],
+      visible: false,
     }
+
+
+    this.handleMouseDown = this.handleMouseDown.bind(this);
+    this.toggleMenu = this.toggleMenu.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -68,7 +76,26 @@ class App extends Component {
       }, () => {
       })
     }
+  }
 
+  //on button click, we would like the credits div to appear to the bottom of the page
+  //
+
+  handleMouseDown(e) {
+    console.log("clicked", e.target);
+    this.toggleMenu();
+
+    
+    e.stopPropagation();
+  }
+
+  toggleMenu() {
+    this.setState(
+      {
+        visible: !this.state.visible
+      }
+    );
+    console.log(this.state.visible)
   }
 
 
@@ -141,6 +168,10 @@ class App extends Component {
                 <p class="icon">{closeWindowIcon}</p>
               </div>
             </div>
+
+          </div>
+         
+
             <div className="searchEngine">
               <h1>Autocomplete</h1>
               <div className="inputsContainer">
@@ -161,16 +192,14 @@ class App extends Component {
               </div>
             </div>
           </div>
+
         </div>
-        <footer>
-          <div className="startButton">
-            <div className="logo">
-              <img className="windows" src={windows} alt="retro windows logo" />
-            </div>
-            <p class="start">Start</p>
-          </div>
-          <Clock className="clock" />
-        </footer>
+         <footer>
+            <StartButton handleMouseDown={this.handleMouseDown}/>
+            <StartMenu handleMouseDown={this.handleMouseDown}
+              menuVisibility={this.state.visible} />
+            <Clock className="clock" />
+          </footer>
       </div>
 
     )

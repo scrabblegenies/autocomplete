@@ -122,7 +122,6 @@ footer {
   justify-content: space-between;
   align-items: center;
   height: 6vh;
-  
 }
 
 .startButton {
@@ -219,6 +218,54 @@ img {
 .errorMessage {
     padding-left: 10px;
 }
+
+
+/* START MENU */
+
+.startMenu {
+    background: lavender;
+    width: 200px;
+    height: 275px;
+    display: flex;
+    position: fixed;
+    bottom: 42px;
+    left: 0;
+    border-bottom: 2px solid darkgray;
+}
+
+.startMenu.hide {
+  transform: translate3d(0, 100vh, 0);
+}
+
+.startMenu.show {
+  transform: translate3d(0vh, 0, 0);
+  overflow: hidden;
+}
+
+.sideBanner {
+    height: 275px;
+    width: 20px;
+    background: linear-gradient(#cabbe8, #046271);
+}
+
+.startMenu ul {
+    list-style: none;
+    padding-left: 30px;
+}
+
+.startMenu ul li {
+    padding: 10px 0;
+    color: #046271;
+}
+
+.datamuse {
+    border-top: 1px solid darkgray;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+  
+  
 
 
 
