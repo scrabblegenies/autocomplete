@@ -84,6 +84,7 @@ path {
   padding: 10px;
   font-family: 'Barlow', sans-serif; 
   border: 2px solid #4e59dc;
+  position: relative;
 }
 
 .userOutput {
@@ -92,7 +93,7 @@ path {
   width: 100%;
   border-top: none;
   background: lavender;
-  
+
 }
 
 .userOutput li {
@@ -100,6 +101,7 @@ path {
   color: #046271;
   padding-left: 10px;
   padding-bottom: 5px;
+  
 }
 
 
@@ -161,7 +163,7 @@ img {
 }
 
 .clock {
-  width: 106px;
+  width: 112px;
   margin-right: 20px;
   border-top: transparent;
   border-left: transparent;
@@ -185,9 +187,10 @@ img {
     height: 175px;
     background: lavender;
     margin: 0 auto;
-    margin-top: 200px;
+    /* margin-top: 200px; */
     box-shadow: 3px 3px 10px darkgray;
     font-family: 'Barlow', sans-serif;
+    position: absolute; top: 175px; right:0; left: 0;
 }
 
 .topBanner {
@@ -333,4 +336,8 @@ h1 {
 .searchEngine {
   height: 75vh;
 }
+}
+
+.hide{
+  visibility: hidden;
 }
