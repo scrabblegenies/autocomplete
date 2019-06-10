@@ -168,11 +168,7 @@ class App extends Component {
                 <p class="icon">{closeWindowIcon}</p>
               </div>
             </div>
-
-          </div>
-         
-
-            <div className="searchEngine">
+<div className="searchEngine">
               <h1>Autocomplete</h1>
               <div className="inputsContainer">
                 <div className="userInput">
@@ -192,16 +188,17 @@ class App extends Component {
               </div>
             </div>
           </div>
+          </div>
+         
 
-        </div>
-         <footer>
+            
+<footer>
             <StartButton handleMouseDown={this.handleMouseDown}/>
             <StartMenu handleMouseDown={this.handleMouseDown}
               menuVisibility={this.state.visible} />
             <Clock className="clock" />
           </footer>
-      </div>
-
+        </div>
     )
   }
 }
