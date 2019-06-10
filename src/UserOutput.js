@@ -8,7 +8,7 @@ class UserOutput extends Component {
             <Fragment>
                 {this.props.globalError ? (
                 
-                <li>Please enter a letter or number</li> 
+                <p className="letterOrNumber">Please enter a letter or number</p> 
                 
                 ):(
                     this.props.wholeWordResult.map((item, index) => {
