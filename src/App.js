@@ -29,6 +29,13 @@ class App extends Component {
       wholeWord: [],
       filteredArray: []
     }
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick = () => {
+    this.setState({
+      returnError: false,
+    })
   }
 
   // event handler
@@ -145,7 +152,8 @@ class App extends Component {
                       globalError={this.state.globalError} />
                   </div>
                   <Error
-                    returnError={this.state.returnError}/>
+                    returnError={this.state.returnError}
+                    handleClick={this.handleClick}/>
                 </div>
               </div> 
             </div>

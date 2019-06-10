@@ -287,3 +287,7 @@ h1 {
   height: 75vh;
 }
 }
+
+.hide{
+  visibility: hidden;
+}
