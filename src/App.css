@@ -71,6 +71,14 @@ path {
   position: relative;
 }
 
+h1 {
+  font-family: 'Nova Flat', cursive;
+  color: #046271;
+  font-size: 5.5rem;
+  text-shadow: 3px 3px 5px #4e59dc;
+}
+
+
 .inputsContainer {
   width: 40%;
   /* border: 1px solid black; */
@@ -87,6 +95,7 @@ path {
   position: relative;
   -webkit-appearance: none;
   border-radius: none;
+  color: #046271;
 }
 
 .userOutput {
@@ -95,7 +104,6 @@ path {
   width: 100%;
   border-top: none;
   background: lavender;
-
 }
 
 .userOutput li {
@@ -114,13 +122,53 @@ path {
   font-size: 14px;
 }
 
-
-h1 {
-  font-family: 'Nova Flat', cursive;
+/* .wikiPopup {
+  font-family: 'Barlow', sans-serif;
   color: #046271;
-  font-size: 5.5rem;
-  text-shadow: 3px 3px 5px #4e59dc;
+
 }
+
+.wikiMessage a {
+  color: #4e59dc;
+} */
+
+.wikiPopup {
+  font-family: 'Barlow', sans-serif;
+  color: lavender;
+  width: 400px;
+  height: 150px;
+  background: #4e59dc;
+  box-shadow: 3px 3px 10px darkgray;
+  position: absolute; 
+  top: 175px; 
+  right:0; 
+  left: 0;
+  margin: 0 auto;
+}
+
+.wikiMessage {
+  margin-top: 40px;
+}
+
+.wikiMessage a {
+  color: lavender;
+}
+
+.popupBar {
+    display: flex;
+    justify-content: space-between;
+    background-image: linear-gradient(to right, #046271, #157088, #2b7e9f, #438bb6, #5e98cc, #76a2d7, #8dace2, #a3b6ec, #b6c1ef, #c7cdf3, #d7d9f6, #e6e6fa);
+    padding: 5px;
+}
+
+.popupBar p {
+    margin: 0;
+}
+
+
+
+
+
 
 footer {
   position: fixed;
@@ -197,7 +245,6 @@ img {
     height: 175px;
     background: lavender;
     margin: 0 auto;
-    /* margin-top: 200px; */
     box-shadow: 3px 3px 10px darkgray;
     font-family: 'Barlow', sans-serif;
     position: absolute; top: 175px; right:0; left: 0;
@@ -374,8 +421,8 @@ h1 {
   bottom: 0;
 }
 
-.wikiPopup{
+/* .wikiPopup{
   align-items: center;
   display: flex;
   justify-content: space-between;
-}
+} */

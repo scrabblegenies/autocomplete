@@ -9,16 +9,20 @@ class Wiki extends Component {
             <Fragment>
                 {this.props.clicked ? (
                     <div className="wikiPopup" id="wiki">
+                        <div className="popupBar">
+                            <p>TAKE ME TO WIKI</p>
+                            <button
+                                className="x"
+                                onClick={this.props.closeWiki}>X
+                            </button>
+                        </div>
                         <p className="wikiMessage">
                             Learn more about <a href={`https://en.wikipedia.org/wiki/${copied}`}
                                 target="_blank"
                                 className="wikiLink"
                                 rel="noopener noreferrer">{copied}</a>
                         </p>
-                        <button
-                            className="x"
-                            onClick={this.props.closeWiki}>X
-                        </button>
+                        
                     </div>
                 ) : (null)}
 
