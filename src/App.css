@@ -85,6 +85,8 @@ path {
   font-family: 'Barlow', sans-serif; 
   border: 2px solid #4e59dc;
   position: relative;
+  -webkit-appearance: none;
+  border-radius: none;
 }
 
 .userOutput {
