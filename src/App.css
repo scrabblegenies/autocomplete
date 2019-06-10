@@ -120,7 +120,6 @@ footer {
   justify-content: space-between;
   align-items: center;
   height: 6vh;
-  
 }
 
 .startButton {
@@ -228,9 +227,6 @@ img {
     position: fixed;
     bottom: 42px;
     left: 0;
-    transition: transform .3s cubic-bezier(0, .52, 0, 1);
-    overflow: scroll;
-    z-index: 1000;
     border-bottom: 2px solid darkgray;
 }
 
