@@ -16,11 +16,11 @@ class UserOutput extends Component {
                 ):(
                     this.props.wholeWordResult.map((item, index) => {
                         return (
-                            <li
+                            <button
                                 key={index}
                                 className="autocompleteItem"
-                                tabindex="0"
-                                onClick={this.props.handleClick}>{item}</li>
+                                tabIndex="0"
+                                onClick={this.props.handleClick}>{item}</button>
                         )
                     }))
                 }

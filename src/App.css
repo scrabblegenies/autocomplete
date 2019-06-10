@@ -98,12 +98,17 @@ path {
 
 }
 
-.userOutput li {
+.userOutput button {
+  border: none;
   font-family: 'Barlow', sans-serif; 
   color: #046271;
   padding-left: 10px;
   padding-bottom: 5px;
-  
+  text-align: left;
+  width: 100%;
+}
+.userOutput button:focus{
+  border: 1px dotted #046271;
 }
 
 .letterOrNumber {
