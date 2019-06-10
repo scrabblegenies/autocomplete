@@ -40,9 +40,17 @@ class App extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick = () => {
+  closePopup = () => {
     this.setState({
       returnError: false,
+    })
+  }
+
+  handleClick = (e) => {
+    this.setState({
+      selectedItem: e.target.innerText
+    }, () => {
+      console.log(this.state.selectedItem)
     })
   }
 
@@ -180,7 +188,8 @@ class App extends Component {
                 <div className="userOutput">
                   <UserOutput
                     wholeWordResult={this.state.wholeWordResult}
-                    globalError={this.state.globalError} />
+                    globalError={this.state.globalError} 
+                    handleClick={this.handleClick}/>
                 </div>
                 <Error
                   returnError={this.state.returnError}
