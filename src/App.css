@@ -358,3 +358,8 @@ h1 {
 .hide{
   visibility: hidden;
 }
+
+.copied{
+  position: absolute;
+  bottom: 0;
+}

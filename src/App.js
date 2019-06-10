@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
 import UserInput from './UserInput.js';
-import Swal from 'sweetalert2';
+
 
 import Clock from './Clock.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,6 +11,7 @@ import { faWindowMinimize } from '@fortawesome/free-solid-svg-icons';
 import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
 import UserOutput from './UserOutput.js';
 import Error from './Error.js';
+import Wiki from './Wiki.js';
 import StartButton from './StartButton.js';
 import StartMenu from './StartMenu.js';
 
@@ -32,9 +33,9 @@ class App extends Component {
       wholeWord: [],
       filteredArray: [],
       visible: false,
+      selectedItem: "",
+      clicked: false
     }
-
-
     this.handleMouseDown = this.handleMouseDown.bind(this);
     this.toggleMenu = this.toggleMenu.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -48,9 +49,17 @@ class App extends Component {
 
   handleClick = (e) => {
     this.setState({
-      selectedItem: e.target.innerText
-    }, () => {
-      console.log(this.state.selectedItem)
+      selectedItem: e.target.innerText,
+      clicked: true
+    },()=>{
+        console.log(this.state.selectedItem)
+        console.log(this.state.clicked)
+    })
+  }
+
+  closeWiki = () => {
+    this.setState({
+      clicked: false,
     })
   }
 
@@ -89,8 +98,6 @@ class App extends Component {
   handleMouseDown(e) {
     console.log("clicked", e.target);
     this.toggleMenu();
-
-    
     e.stopPropagation();
   }
 
@@ -191,6 +198,10 @@ class App extends Component {
                 <Error
                   returnError={this.state.returnError}
                   closePopup={this.closePopup} />
+                <Wiki
+                  clicked={this.state.clicked}
+                  selectedItem={this.state.selectedItem}
+                  closeWiki={this.closeWiki}/>
               </div>
             </div>
           </div>
