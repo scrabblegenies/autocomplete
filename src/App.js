@@ -110,7 +110,7 @@ class App extends Component {
     let blankError = false;
     axios({
       //The API has no other way of sending exact data. I need to call the whole database.
-      url: `http://api.datamuse.com/sug?max=10&k=VQE6va&s=${wholeWord}`,
+      url: `https://api.datamuse.com/sug?max=10&k=VQE6va&s=${wholeWord}`,
       method: 'GET',
 
     }).then((response) => {
