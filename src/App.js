@@ -151,12 +151,12 @@ class App extends Component {
             </div>
           </div>
           <footer>
-            <div className="startButton">
+            <button className="startButton">
               <div className="logo">
                 <img className="windows" src={windows} alt="retro windows logo" />
               </div>
               <p class="start">Start</p>
-            </div>
+            </button>
             <Clock className="clock" />
           </footer>
         </div>
