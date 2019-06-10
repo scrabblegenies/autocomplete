@@ -10,8 +10,7 @@ class StartMenu extends Component {
         }
 
         return (
-            <div onMouseDown={this.props.handleMouseDown}
-                className={visibility}>
+            <div className={visibility}>
                 <div className="sideBanner"></div>
                 <ul>
                     <li><a href="https://twitter.com/RobertJinChun">Robert Chun</a></li>
