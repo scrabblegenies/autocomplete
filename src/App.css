@@ -246,6 +246,7 @@ img {
     height: 275px;
     width: 20px;
     background: linear-gradient(#cabbe8, #046271);
+    margin: 3px 0 3px 3px;
 }
 
 .startMenu ul {
@@ -255,14 +256,30 @@ img {
 
 .startMenu ul li {
     padding: 10px 0;
-    color: #046271;
+}
+
+.startMenu ul li a {
+    text-decoration: none;
+}
+
+.startMenu ul li a:hover {
+    border-bottom: 1px solid #4e59dc;
+    padding-bottom: 5px;
+    color: #4e59dc;
+}
+
+.startMenu ul li, 
+.startMenu ul li a {
+  color: #046271;
 }
 
 .datamuse {
     border-top: 1px solid darkgray;
     margin-right: 20px;
     margin-top: 10px;
+    line-height: 1.8;
 }
+
 
   
   
