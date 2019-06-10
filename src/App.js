@@ -86,9 +86,6 @@ class App extends Component {
     }
   }
 
-  //on button click, we would like the credits div to appear to the bottom of the page
-  //
-
   handleMouseDown(e) {
     console.log("clicked", e.target);
     this.toggleMenu();
@@ -176,7 +173,7 @@ class App extends Component {
                 <p class="icon">{closeWindowIcon}</p>
               </div>
             </div>
-<div className="searchEngine">
+            <div className="searchEngine">
               <h1>Autocomplete</h1>
               <div className="inputsContainer">
                 <div className="userInput">
@@ -203,8 +200,7 @@ class App extends Component {
             
 <footer>
             <StartButton handleMouseDown={this.handleMouseDown}/>
-            <StartMenu handleMouseDown={this.handleMouseDown}
-              menuVisibility={this.state.visible} />
+            <StartMenu menuVisibility={this.state.visible} />
             <Clock className="clock" />
           </footer>
         </div>
