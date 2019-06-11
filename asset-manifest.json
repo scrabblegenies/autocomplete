@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/scrabbleGenie/static/css/main.ea499970.chunk.css",
-    "main.js": "/scrabbleGenie/static/js/main.26659f6c.chunk.js",
-    "main.js.map": "/scrabbleGenie/static/js/main.26659f6c.chunk.js.map",
+    "main.js": "/scrabbleGenie/static/js/main.2737dfcd.chunk.js",
+    "main.js.map": "/scrabbleGenie/static/js/main.2737dfcd.chunk.js.map",
     "runtime~main.js": "/scrabbleGenie/static/js/runtime~main.eb5d7ccd.js",
     "runtime~main.js.map": "/scrabbleGenie/static/js/runtime~main.eb5d7ccd.js.map",
     "static/js/2.bb07baf5.chunk.js": "/scrabbleGenie/static/js/2.bb07baf5.chunk.js",
     "static/js/2.bb07baf5.chunk.js.map": "/scrabbleGenie/static/js/2.bb07baf5.chunk.js.map",
     "index.html": "/scrabbleGenie/index.html",
-    "precache-manifest.bfc84b92e672e2d25cd60e3d6dbcaeaf.js": "/scrabbleGenie/precache-manifest.bfc84b92e672e2d25cd60e3d6dbcaeaf.js",
+    "precache-manifest.6ccaf8340fbc8eec5d1c06b17a0ee094.js": "/scrabbleGenie/precache-manifest.6ccaf8340fbc8eec5d1c06b17a0ee094.js",
     "service-worker.js": "/scrabbleGenie/service-worker.js",
     "static/css/main.ea499970.chunk.css.map": "/scrabbleGenie/static/css/main.ea499970.chunk.css.map",
     "static/media/icon1.png": "/scrabbleGenie/static/media/icon1.bac2d561.png",
