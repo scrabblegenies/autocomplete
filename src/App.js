@@ -155,7 +155,7 @@ class App extends Component {
             <div className="tabBar">
               <div className="iconContainer">
                 <p class="icon">{minimizeIcon}</p>
-                <button onClick={this.playSound} ><p class="icon">{closeWindowIcon}</p></button>
+                <button onClick={this.playSound} className="easterEgg" ><p class="icon">{closeWindowIcon}</p></button>
               </div>
             </div>
             <div className="searchEngine">

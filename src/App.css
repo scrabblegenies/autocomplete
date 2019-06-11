@@ -94,6 +94,11 @@ html{
   padding: 5px;
 }
 
+.easterEgg {
+  background: #046173;
+  border: none;
+}
+
 path {
   fill: lavender;
 }
