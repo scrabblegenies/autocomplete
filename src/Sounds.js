@@ -1,13 +1,12 @@
 import React, { Component, Fragment } from 'react';
 
-
+//Class component for sounds
 class Sounds extends Component {
     render() {
         console.log(this.props.playAudio)
         return (
             <Fragment>
                 {this.props.playAudio ? (
-                    
                     <iframe title="modem"
                     width="0" 
                     height="0" 
