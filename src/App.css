@@ -33,7 +33,7 @@ html{
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 10;
   display: flex;
   flex-direction: column;
   margin-left: 20px;
@@ -53,7 +53,7 @@ html{
   font-size: 16px;
   width: 500px;
   position: absolute;
-  z-index: 300;
+  z-index: 40;
   top: 200px; 
   right:0; 
   left: 0;
@@ -111,7 +111,7 @@ html{
     cursor: url('./cursor.png'),
     default;
     position: relative;
-    z-index: 150;
+    z-index: 20;
 }
 
 .tabBar {
@@ -234,7 +234,7 @@ footer {
   justify-content: space-between;
   align-items: center;
   height: 6vh;
-  z-index: 200
+  z-index: 30;
 }
 
 .startButton {
@@ -343,6 +343,7 @@ img {
     bottom: 42px;
     left: 0;
     border-bottom: 2px solid darkgray;
+    z-index: 50;
 }
 
 .startMenu.hide {
@@ -352,6 +353,7 @@ img {
 .startMenu.show {
   transform: translate3d(0vh, 0, 0);
   overflow: hidden;
+  z-index: 50;
 }
 
 .sideBanner {
@@ -464,6 +466,10 @@ img {
   }
 
 
+  .startMenu{
+    bottom: 34px;
+  }
+
   .hide{
     visibility: hidden;
   }
@@ -491,12 +497,25 @@ img {
     position: absolute;
     bottom: -70px;
     left: 0;
-    z-index: 100;
+    z-index: 10;
     display: flex;
     flex-direction: row;
     align-items: flex-end;
-    margin-left: 20px;
+
   }
+
+  .errorPopup {
+    width: 275px;
+    top: 100px; 
+}
+
+  .wikiPopup {
+  width: 275px;
+  top: 100px; 
+  
+}
+
+
   
 
 }
