@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+//class component for user inputs
 class UserInput extends Component {
 
     render(){
@@ -10,11 +11,8 @@ class UserInput extends Component {
                     type="text"
                     onChange={this.props.onChange}
                     value = {this.props.firstLetter}
-
                     maxLength = "20"
-
                     placeholder="start typing something"
-
                     />
                 </form>
             </div>

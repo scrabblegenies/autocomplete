@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 
-
+//Class component for Wiki page
 class Wiki extends Component {
 
     render() {
@@ -15,7 +15,6 @@ class Wiki extends Component {
                             <button
                                 className="x"
                                 onClick={closeWiki}>X
-                                
                             </button>
                         </div>
                         <p className="wikiMessage">
@@ -27,7 +26,6 @@ class Wiki extends Component {
                         
                     </div>
                 ) : (null)}
-
             </Fragment>
         );
     }

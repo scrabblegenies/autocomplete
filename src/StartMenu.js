@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 
+//class component for start menu
 class StartMenu extends Component {
     render() {
-
         let visibility = "startMenu hide";
-
         if (this.props.menuVisibility) {
             visibility = "startMenu show";
         }
-
         return (
             <div className={visibility}>
                 <div className="sideBanner"></div>
