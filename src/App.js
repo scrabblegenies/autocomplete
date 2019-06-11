@@ -35,14 +35,12 @@ class App extends Component {
       visible: false,
       clicked: false,
       playAudio: false,
+      showInstructions: true,
+      tabbable: 0,
       wholeWordResult: [],
       wholeWord: [],
       filteredArray: [],
-      selectedItem: "",
-      clicked: false,
-      playAudio:false,
-      showInstructions: true,
-      tabbable: 0
+      selectedItem: ""
     }
   }
 
@@ -170,8 +168,7 @@ class App extends Component {
     })
     //Error handling for axios call
       .catch(function (error) {
-        console.log(error)
-        alert("Please refresh your browser and ensure the internet is connected")
+        //there was originally something but its been canceled just incase the API is not doing what its supposed to
       })
   }
 
