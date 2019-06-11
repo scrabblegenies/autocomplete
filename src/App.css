@@ -13,12 +13,6 @@ font-family: 'Barlow', sans-serif; */
 #4e59dc
 #046271 */
 
-
-
-
-
-
-
 body {
   background: #4e59dc;
 }
@@ -32,7 +26,45 @@ html{
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
 
+.desktopIcons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.desktopIcons img {
+  width: 50px;
+  height: 50px;
+  margin-top: 20px;
+  
+}
+
+.instructions {
+  background: #4e59dc;
+  width: 60px;
+  height: 60px;
+  border: none;
+  margin-top: 10px;
+}
+
+.instructions img {
+  margin-top: 0;
+}
+
+.iconText {
+  font-family: 'Barlow', sans-serif; 
+  font-size: 11px;
+  margin: 0;
+  width: 75px;
+  padding: 5px 0;
+  color: white;
 }
 
 .wrapper {
@@ -42,6 +74,8 @@ html{
   box-shadow: 3px 3px 10px black;
     cursor: url('./cursor.png'),
     default;
+    position: relative;
+    z-index: 150;
 }
 
 .tabBar {
@@ -81,7 +115,6 @@ h1 {
 
 .inputsContainer {
   width: 40%;
-  /* border: 1px solid black; */
   margin: 0 auto;
 }
 
@@ -127,15 +160,6 @@ h1 {
   font-size: 14px;
 }
 
-/* .wikiPopup {
-  font-family: 'Barlow', sans-serif;
-  color: #046271;
-
-}
-
-.wikiMessage a {
-  color: #4e59dc;
-} */
 
 .wikiPopup {
   font-family: 'Barlow', sans-serif;
@@ -171,10 +195,6 @@ h1 {
 }
 
 
-
-
-
-
 footer {
   position: fixed;
   bottom: 0;
@@ -185,6 +205,7 @@ footer {
   justify-content: space-between;
   align-items: center;
   height: 6vh;
+  z-index: 200
 }
 
 .startButton {

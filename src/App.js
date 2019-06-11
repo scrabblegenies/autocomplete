@@ -2,11 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
 import UserInput from './UserInput.js';
-
-
 import Clock from './Clock.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faQuestionCircle} from '@fortawesome/free-solid-svg-icons';
 import { faWindowMinimize } from '@fortawesome/free-solid-svg-icons';
 import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
 import UserOutput from './UserOutput.js';
@@ -14,10 +11,9 @@ import Error from './Error.js';
 import Wiki from './Wiki.js';
 import StartButton from './StartButton.js';
 import StartMenu from './StartMenu.js';
+import DesktopIcons from './DesktopIcons.js';
 
 
-
-const questionMarkIcon = <FontAwesomeIcon aria-hidden="true" icon={faQuestionCircle} />
 const minimizeIcon = <FontAwesomeIcon aria-hidden="true" icon={faWindowMinimize} />
 const closeWindowIcon = <FontAwesomeIcon aria-hidden="true" icon={faWindowClose} />
 
@@ -136,11 +132,15 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
+        <div className="desktopIcons">
+
+        
+        </div>
         <div className="container">
+          <DesktopIcons />
           <div className="wrapper">
             <div className="tabBar">
               <div className="iconContainer">
-                <p class="icon">{questionMarkIcon}</p>
                 <p class="icon">{minimizeIcon}</p>
                 <p class="icon">{closeWindowIcon}</p>
               </div>
