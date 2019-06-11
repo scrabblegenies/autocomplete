@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e39dfda24f509fcbfc5c39d82532d833",
+    "revision": "2e0a323c69a6a475ca7151b69ec2d119",
     "url": "/scrabbleGenie/index.html"
   },
   {
-    "revision": "8bbe70ec62d1964ef864",
-    "url": "/scrabbleGenie/static/css/main.39f5c2e5.chunk.css"
+    "revision": "5520350635ff3c0b2523",
+    "url": "/scrabbleGenie/static/css/main.4a5825dc.chunk.css"
   },
   {
-    "revision": "0a939ebe501dbc595cf3",
-    "url": "/scrabbleGenie/static/js/2.52c03034.chunk.js"
+    "revision": "589dd08153820c88455c",
+    "url": "/scrabbleGenie/static/js/2.bb07baf5.chunk.js"
   },
   {
-    "revision": "8bbe70ec62d1964ef864",
-    "url": "/scrabbleGenie/static/js/main.df551e22.chunk.js"
+    "revision": "5520350635ff3c0b2523",
+    "url": "/scrabbleGenie/static/js/main.e51b6a20.chunk.js"
   },
   {
     "revision": "63ee0e015706e28c8a35",
