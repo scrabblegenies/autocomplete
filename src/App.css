@@ -446,6 +446,33 @@ img {
     font-size: 3rem;
   }
 
+  
+}
+
+
+@media (max-width: 420px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .inputsContainer {
+    width: 80%;
+  }
+
+  .searchEngine {
+    height: 65vh;
+  }
+
+
+  .hide{
+    visibility: hidden;
+  }
+
+  .copied{
+    position: absolute;
+    bottom: 0;
+  }
+
   .instructionsContainer {
     top: 100px;
     width: 275px;
@@ -470,32 +497,6 @@ img {
     align-items: flex-end;
     margin-left: 20px;
   }
-}
-
-
-@media (max-width: 400px) {
-  h1 {
-    font-size: 2rem;
-  }
-
-  .inputsContainer {
-    width: 80%;
-  }
-
-  .searchEngine {
-    height: 75vh;
-  }
-
-
-  .hide{
-    visibility: hidden;
-  }
-
-  .copied{
-    position: absolute;
-    bottom: 0;
-  }
-
   
 
 }
