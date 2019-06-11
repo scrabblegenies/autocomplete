@@ -7,11 +7,10 @@ import UserOutput from './UserOutput.js';
 import Error from './Error.js';
 import Wiki from './Wiki.js';
 import Clock from './Clock.js';
-import Sounds from './Sounds.js'
+import Sounds from './Sounds.js';
 import StartButton from './StartButton.js';
 import StartMenu from './StartMenu.js';
 import DesktopIcons from './DesktopIcons.js';
-import Sounds from './Sounds.js'
 import Instructions from './Instructions.js'
 
 //font awsome
@@ -175,8 +174,6 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <div className="desktopIcons">
-        </div>
         <div className="container">
           <DesktopIcons handleInstructionsClick={this.handleInstructionsClick}/>
           <Instructions 

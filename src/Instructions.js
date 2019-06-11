@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { Component, Fragment } from 'react';
 
 class Instructions extends Component {
@@ -28,17 +27,4 @@ class Instructions extends Component {
 }
 
 export default Instructions;
-=======
-// import React, { Component } from 'react';
-
-// class Instructions extends Component {
-//     render() {
-//         return (
-           
-//         );
-//     }
-// }
-
-// export default Instructions;
->>>>>>> 21873bbb2faa9b4a06b75b53c386b95aecf3dcc3
 
