@@ -15,6 +15,7 @@ class Wiki extends Component {
                             <button
                                 className="x"
                                 onClick={closeWiki}>X
+                                
                             </button>
                         </div>
                         <p className="wikiMessage">
