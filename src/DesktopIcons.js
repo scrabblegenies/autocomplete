@@ -24,7 +24,7 @@ class DesktopIcons extends Component {
                 </div>
                 <div className="iconContainer4">
                     <img src={icon4} className="icon4" aria-hidden="true" />
-                    <p className="iconText">Ignore</p>
+                    <p className="iconText">Ignore me</p>
                 </div>
                 <div className="iconContainer6">
                     <img src={icon6} className="icon6" aria-hidden="true" />
