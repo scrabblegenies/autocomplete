@@ -12,6 +12,7 @@ import Wiki from './Wiki.js';
 import StartButton from './StartButton.js';
 import StartMenu from './StartMenu.js';
 import DesktopIcons from './DesktopIcons.js';
+import Sounds from './Sounds.js'
 
 
 const minimizeIcon = <FontAwesomeIcon aria-hidden="true" icon={faWindowMinimize} />
@@ -30,7 +31,8 @@ class App extends Component {
       filteredArray: [],
       visible: false,
       selectedItem: "",
-      clicked: false
+      clicked: false,
+      playAudio:false
     }
   }
 
@@ -94,6 +96,17 @@ class App extends Component {
     });
   }
 
+  playSound=()=> {
+    console.log('clocked')
+    this.setState({
+      playAudio:true
+    },()=>{
+      console.log(this.state.playAudio)
+    })
+  }
+
+
+
 
   axiosCall = function (wholeWord) {
     // let temporaryList = [];
@@ -142,7 +155,7 @@ class App extends Component {
             <div className="tabBar">
               <div className="iconContainer">
                 <p class="icon">{minimizeIcon}</p>
-                <p class="icon">{closeWindowIcon}</p>
+                <button onClick={this.playSound} ><p class="icon">{closeWindowIcon}</p></button>
               </div>
             </div>
             <div className="searchEngine">
@@ -167,6 +180,8 @@ class App extends Component {
                   clicked={this.state.clicked}
                   selectedItem={this.state.selectedItem}
                   closeWiki={this.closeWiki}/>
+                  <Sounds 
+                  playAudio={this.state.playAudio} />
               </div>
             </div>
           </div>
