@@ -96,7 +96,6 @@ class App extends Component {
 
   //function to handle the event to play sounds as easter egg
   playSound = () => {
-    console.log('clocked')
     this.setState({
       playAudio: true
     }, () => {
