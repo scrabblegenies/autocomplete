@@ -167,6 +167,7 @@ class App extends Component {
     })
     //Error handling for axios call
       .catch(function (error) {
+        console.log(error)
         alert("Please refresh your browser and ensure the internet is connected")
       })
   }
