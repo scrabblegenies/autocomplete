@@ -34,14 +34,12 @@ class App extends Component {
       returnError: false,
       visible: false,
       clicked: false,
-      playAudio: false,
+      playAudio:false,
+      showInstructions: true,
       wholeWordResult: [],
       wholeWord: [],
       filteredArray: [],
-      selectedItem: "",
-      clicked: false,
-      playAudio:false,
-      showInstructions: true
+      selectedItem: ""
     }
   }
 
@@ -140,6 +138,7 @@ class App extends Component {
     axios({
       url: `https://api.datamuse.com/sug?max=10&k=VQE6va&s=${wholeWord}`,
       method: 'GET',
+      timeout: 2000,
     }).then((response) => {
       response.data.map((word) => {
         return (
@@ -168,7 +167,8 @@ class App extends Component {
     //Error handling for axios call
       .catch(function (error) {
         console.log(error)
-        alert("Please refresh your browser and ensure the internet is connected")
+        //this was consol logged out because our API was not co-operating with us
+        // alert("Please refresh your browser and ensure the internet is connected")
       })
   }
 
