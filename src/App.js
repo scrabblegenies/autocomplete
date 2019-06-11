@@ -105,7 +105,7 @@ class App extends Component {
     this.setState({
       playAudio:true
     },()=>{
-      console.log(this.state.playAudio)
+      // console.log(this.state.playAudio)
     })
   }
 
@@ -181,7 +181,9 @@ class App extends Component {
                   selectedItem={this.state.selectedItem}
                   closeWiki={this.closeWiki}/>
                   <Sounds 
-                  playAudio={this.state.playAudio} />
+                  playSound={this.state.playSound}
+                  playAudio={this.state.playAudio}
+                   />
               </div>
             </div>
           </div>
