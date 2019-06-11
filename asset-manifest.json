@@ -1,16 +1,22 @@
 {
   "files": {
-    "main.css": "/scrabbleGenie/static/css/main.37e9c16a.chunk.css",
-    "main.js": "/scrabbleGenie/static/js/main.e8ba1083.chunk.js",
-    "main.js.map": "/scrabbleGenie/static/js/main.e8ba1083.chunk.js.map",
+    "main.css": "/scrabbleGenie/static/css/main.39f5c2e5.chunk.css",
+    "main.js": "/scrabbleGenie/static/js/main.df551e22.chunk.js",
+    "main.js.map": "/scrabbleGenie/static/js/main.df551e22.chunk.js.map",
     "runtime~main.js": "/scrabbleGenie/static/js/runtime~main.eb5d7ccd.js",
     "runtime~main.js.map": "/scrabbleGenie/static/js/runtime~main.eb5d7ccd.js.map",
-    "static/js/2.169bfb91.chunk.js": "/scrabbleGenie/static/js/2.169bfb91.chunk.js",
-    "static/js/2.169bfb91.chunk.js.map": "/scrabbleGenie/static/js/2.169bfb91.chunk.js.map",
+    "static/js/2.52c03034.chunk.js": "/scrabbleGenie/static/js/2.52c03034.chunk.js",
+    "static/js/2.52c03034.chunk.js.map": "/scrabbleGenie/static/js/2.52c03034.chunk.js.map",
     "index.html": "/scrabbleGenie/index.html",
-    "precache-manifest.3527a1ba3d1af6a4dbb4b2059455b39e.js": "/scrabbleGenie/precache-manifest.3527a1ba3d1af6a4dbb4b2059455b39e.js",
+    "precache-manifest.2d4ed98baca4740a51ecd8a7c858b2af.js": "/scrabbleGenie/precache-manifest.2d4ed98baca4740a51ecd8a7c858b2af.js",
     "service-worker.js": "/scrabbleGenie/service-worker.js",
-    "static/css/main.37e9c16a.chunk.css.map": "/scrabbleGenie/static/css/main.37e9c16a.chunk.css.map",
+    "static/css/main.39f5c2e5.chunk.css.map": "/scrabbleGenie/static/css/main.39f5c2e5.chunk.css.map",
+    "static/media/icon1.png": "/scrabbleGenie/static/media/icon1.bac2d561.png",
+    "static/media/icon2.png": "/scrabbleGenie/static/media/icon2.14134a94.png",
+    "static/media/icon3.png": "/scrabbleGenie/static/media/icon3.dffa7899.png",
+    "static/media/icon4.png": "/scrabbleGenie/static/media/icon4.7fbdffbe.png",
+    "static/media/icon5.png": "/scrabbleGenie/static/media/icon5.53c95952.png",
+    "static/media/icon6.png": "/scrabbleGenie/static/media/icon6.d2919305.png",
     "static/media/windows.png": "/scrabbleGenie/static/media/windows.23d5e9bf.png"
   }
 }
