@@ -138,7 +138,7 @@ class App extends Component {
     const modifiedList = [];
     let returnError = false;
     axios({
-      url: `https://api.datamuse.com/sug?max=10&k=VQE6va&s=${wholeWord}`,
+      url: `http://api.datamuse.com/sug?max=10&k=VQE6va&s=${wholeWord}`,
       method: 'GET',
     }).then((response) => {
       response.data.map((word) => {
