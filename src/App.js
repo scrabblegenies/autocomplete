@@ -13,7 +13,7 @@ import StartMenu from './StartMenu.js';
 import DesktopIcons from './DesktopIcons.js';
 import Instructions from './Instructions.js'
 
-//font awsome
+//font awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWindowMinimize } from '@fortawesome/free-solid-svg-icons';
 import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
@@ -41,7 +41,8 @@ class App extends Component {
       selectedItem: "",
       clicked: false,
       playAudio:false,
-      showInstructions: true
+      showInstructions: true,
+      tabbable: 0
     }
   }
 
@@ -56,7 +57,8 @@ class App extends Component {
   handleClick = (e) => {
     this.setState({
       selectedItem: e.target.innerText,
-      clicked: true
+      clicked: true,
+      tabbable: "-1"
     })
   }
 
@@ -64,6 +66,7 @@ class App extends Component {
   closeWiki = () => {
     this.setState({
       clicked: false,
+      tabbable: "0"
     })
   }
 
@@ -200,7 +203,8 @@ class App extends Component {
                   <UserOutput
                     wholeWordResult={this.state.wholeWordResult}
                     globalError={this.state.globalError}
-                    handleClick={this.handleClick.bind(this)} />
+                    handleClick={this.handleClick.bind(this)}
+                    tabbable={this.state.tabbable} />
                 </div>
                 <Error
                   returnError={this.state.returnError}

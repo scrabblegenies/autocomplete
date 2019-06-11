@@ -7,7 +7,7 @@ class Error extends Component {
         return (
             <Fragment>
                 {this.props.returnError ? 
-                    (<div class="errorPopup" id="error">
+                    (<div class="errorPopup" id="error" tabIndex="-1">
                         <div class="topBanner">
                             <p class="error">ERROR</p>
                             <button
