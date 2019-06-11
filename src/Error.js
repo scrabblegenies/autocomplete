@@ -1,12 +1,11 @@
 import React, { Component, Fragment } from 'react';
 
+//Class component for errors
 class Error extends Component {
 
     render(){
-
         return (
             <Fragment>
-        
                 {this.props.returnError ? 
                     (<div class="errorPopup" id="error">
                         <div class="topBanner">
@@ -19,7 +18,6 @@ class Error extends Component {
                     </div>) 
                 : null}
             </Fragment>
-
         )
     }
     
