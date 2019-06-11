@@ -20,7 +20,10 @@ class UserOutput extends Component {
                                 key={index}
                                 className="autocompleteItem"
                                 tabIndex="0"
-                                onClick={this.props.handleClick}>{item}</button>
+                                onClick={this.props.handleClick}
+                            >
+                                {item}
+                            </button>
                         )
                     }))
                 }

@@ -4,23 +4,24 @@ import React, { Component, Fragment } from 'react';
 class Wiki extends Component {
 
     render() {
-        let copied = this.props.selectedItem;
+        //deconstructing the props so that we don't need to write this.props.blabla every time
+        const {selectedItem, clicked, closeWiki} = this.props;
         return (
             <Fragment>
-                {this.props.clicked ? (
+                {clicked ? (
                     <div className="wikiPopup" id="wiki">
                         <div className="popupBar">
                             <p>TAKE ME TO WIKI</p>
                             <button
                                 className="x"
-                                onClick={this.props.closeWiki}>X
+                                onClick={closeWiki}>X
                             </button>
                         </div>
                         <p className="wikiMessage">
-                            Learn more about <a href={`https://en.wikipedia.org/wiki/${copied}`}
+                            Learn more about <a href={`https://en.wikipedia.org/wiki/${selectedItem}`}
                                 target="_blank"
                                 className="wikiLink"
-                                rel="noopener noreferrer">{copied}</a>
+                                rel="noopener noreferrer">{selectedItem}</a>
                         </p>
                         
                     </div>

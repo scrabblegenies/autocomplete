@@ -36,9 +36,6 @@ class App extends Component {
       selectedItem: "",
       clicked: false
     }
-    this.handleMouseDown = this.handleMouseDown.bind(this);
-    this.toggleMenu = this.toggleMenu.bind(this);
-    this.handleClick = this.handleClick.bind(this);
   }
 
   closePopup = () => {
@@ -51,9 +48,6 @@ class App extends Component {
     this.setState({
       selectedItem: e.target.innerText,
       clicked: true
-    },()=>{
-        console.log(this.state.selectedItem)
-        console.log(this.state.clicked)
     })
   }
 
@@ -64,15 +58,16 @@ class App extends Component {
   }
 
   // event handler
-  handleTextChange = (event) => {
-    let userInput = event.target.value;
-    let regexMaster = RegExp(`([\sA-Za-z0-9])`);
-    let wordSpread = [...userInput];
+  handleTextChange = (e) => {
+    const userInput = e.target.value;
+    const regexMaster = RegExp(`([\sA-Za-z0-9])`);
+    const wordSpread = [...userInput];
     let error = false;
 
 
     wordSpread.map((letter) => {
-      if (!regexMaster.test(letter) === true) {
+      // took out the === true because it's confusing and redundant
+      if (!regexMaster.test(letter)) {
         error = true
       }
       return (
@@ -83,94 +78,64 @@ class App extends Component {
       this.axiosCall(userInput)
       this.setState({
         globalError: false,
-
-      }, () => {
       })
     }
     else {
       this.setState({
         globalError: true,
-      }, () => {
       })
     }
   }
 
   handleMouseDown(e) {
-    console.log("clicked", e.target);
     this.toggleMenu();
     e.stopPropagation();
   }
 
   toggleMenu() {
-    this.setState(
-      {
-        visible: !this.state.visible
-      }
-    );
-    console.log(this.state.visible)
+    this.setState({
+      visible: !this.state.visible
+    });
   }
 
 
   axiosCall = function (wholeWord) {
-    let temporaryList = [];
-    let modifiedList = [];
-    let blankError = false;
+    // let temporaryList = [];
+    const modifiedList = [];
+    let returnError = false;
     axios({
       //The API has no other way of sending exact data. I need to call the whole database.
       url: `https://api.datamuse.com/sug?max=10&k=VQE6va&s=${wholeWord}`,
       method: 'GET',
 
     }).then((response) => {
-      temporaryList = response;
-      temporaryList.data.map((word, i) => {
+      // temporaryList = response;
+      response.data.map((word) => {
         return (
           modifiedList.push(word.word)
         )
       })
 
-      console.log(modifiedList)
-      // if (modifiedList.length < 1){
-      //   /////////////@@//////////////////////////////////////////////////////////////////////////////////////////
-      //   /////////////@@//////////////////////////////////////////////////////////////////////////////////////////
-      //   /////////////@@//////////////////////////////////////////////////////////////////////////////////////////
-      //   /////////////@@//////////////////////////////////////////////////////////////////////////////////////////
-      //   /////////////@@//////////////////////////////////////////////////////////////////////////////////////////
-      //   /////////////@@//////////////////////////////////////////////////////////////////////////////////////////
-      //   /////////////@@///////////////////@@@@@///////@/////@////@////////////@@@@///////////////////////////////
-      //   /////////////@@/////////////////@@/////@@/////@/////@////@@@@@@@////@@////@@/////////////////////////////
-      //   /////////////@@////////////////@/////////@////@/////@////@/////////@////////@////////////////////////////
-      //   /////////////@@/////////////////@@/////@@@////@/////@////@//////////@@////@@@////////////////////////////
-      //   /////////////@@@@@@@@@@@@@@///////@@@@@//@////@@@@@@@////@////////////@@@@//@////////////////////////////
-      //   alert("this is not right")
-      // }
-
-      
-
       this.setState({
         wholeWordResult: modifiedList,
-        // returnError: blankError
       }, () => {
-          console.log(this.state.wholeWordResult.length)
           if (this.state.wholeWordResult.length === 0) {
-            blankError = true
+            returnError = true
           } else {
-            blankError = false
+            returnError = false
           }
       })
       this.setState({
-        returnError: blankError
-      }, () => {
+        returnError: returnError
       })
     })
-      .catch(function (error) {
-      })
-
+      // .catch(function (error) {
+      // })
   }
 
   render() {
     return (
       <div className='App'>
-        {/* <UserInput onChange={this.handleTextChange} data={this.state.data} /> */}
         <div className="container">
           <div className="wrapper">
             <div className="tabBar">
@@ -193,7 +158,7 @@ class App extends Component {
                   <UserOutput
                     wholeWordResult={this.state.wholeWordResult}
                     globalError={this.state.globalError} 
-                    handleClick={this.handleClick}/>
+                    handleClick={this.handleClick.bind(this)}/>
                 </div>
                 <Error
                   returnError={this.state.returnError}
@@ -207,7 +172,7 @@ class App extends Component {
           </div>
           </div>
           <footer>
-            <StartButton handleMouseDown={this.handleMouseDown}/>
+          <StartButton handleMouseDown={this.handleMouseDown.bind(this)}/>
             <StartMenu menuVisibility={this.state.visible} />
             <Clock className="clock" />
           </footer>
@@ -215,7 +180,6 @@ class App extends Component {
     )
   }
 }
-
 
 
 export default App
