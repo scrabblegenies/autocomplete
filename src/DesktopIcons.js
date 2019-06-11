@@ -8,10 +8,11 @@ import icon6 from './icon6.png'
 
 class DesktopIcons extends Component {
     render() {
+        const { handleInstructionsClick } = this.props;
         return (
             <div className="desktopIcons">
                 <div className="iconContainer1">
-                    <button aria-label="about this app" className="instructions"><img src={icon1} aria-hidden="true"/></button>
+                    <button aria-label="about this app" className="instructions" onClick={handleInstructionsClick}><img src={icon1} aria-hidden="true"/></button>
                     <p className="iconText">Autocomplete Instructions</p>
                 </div>
                 <div className="iconContainer2">

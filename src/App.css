@@ -46,6 +46,42 @@ html{
   
 }
 
+.instructionsContainer {
+  background: lavender;
+  font-family: 'Barlow', sans-serif; 
+  color: #046271;
+  font-size: 16px;
+  width: 500px;
+  position: absolute;
+  z-index: 300;
+  top: 200px; 
+  right:0; 
+  left: 0;
+  margin: 0 auto;
+  box-shadow: 3px 3px 10px darkgray;
+
+}
+
+.popupBar {
+    display: flex;
+    justify-content: space-between;
+    background-image: linear-gradient(to right, #046271, #157088, #2b7e9f, #438bb6, #5e98cc, #76a2d7, #8dace2, #a3b6ec, #b6c1ef, #c7cdf3, #d7d9f6, #e6e6fa);
+    padding: 5px;
+}
+
+.popupBar p {
+    margin: 0;
+    color: lavender;
+}
+
+.instructionsText {
+  padding: 20px;
+}
+
+.ok {
+  margin-bottom: 20px;
+}
+
 .instructions {
   background: #4e59dc;
   width: 60px;
@@ -182,18 +218,6 @@ h1 {
 .wikiMessage a {
   color: lavender;
 }
-
-.popupBar {
-    display: flex;
-    justify-content: space-between;
-    background-image: linear-gradient(to right, #046271, #157088, #2b7e9f, #438bb6, #5e98cc, #76a2d7, #8dace2, #a3b6ec, #b6c1ef, #c7cdf3, #d7d9f6, #e6e6fa);
-    padding: 5px;
-}
-
-.popupBar p {
-    margin: 0;
-}
-
 
 footer {
   position: fixed;

@@ -13,6 +13,7 @@ import StartButton from './StartButton.js';
 import StartMenu from './StartMenu.js';
 import DesktopIcons from './DesktopIcons.js';
 import Sounds from './Sounds.js'
+import Instructions from './Instructions.js'
 
 
 const minimizeIcon = <FontAwesomeIcon aria-hidden="true" icon={faWindowMinimize} />
@@ -32,7 +33,8 @@ class App extends Component {
       visible: false,
       selectedItem: "",
       clicked: false,
-      playAudio:false
+      playAudio:false,
+      showInstructions: true
     }
   }
 
@@ -52,6 +54,18 @@ class App extends Component {
   closeWiki = () => {
     this.setState({
       clicked: false,
+    })
+  }
+
+  handleInstructionsClick =(e) => {
+    this.setState({
+      showInstructions: true
+    })
+  }
+
+  closeInstructions = () => {
+    this.setState({
+      showInstructions: false
     })
   }
 
@@ -145,12 +159,11 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <div className="desktopIcons">
-
-        
-        </div>
         <div className="container">
-          <DesktopIcons />
+          <DesktopIcons handleInstructionsClick={this.handleInstructionsClick}/>
+          <Instructions 
+            showInstructions={this.state.showInstructions}
+            closeInstructions={this.closeInstructions}/>
           <div className="wrapper">
             <div className="tabBar">
               <div className="iconContainer">
