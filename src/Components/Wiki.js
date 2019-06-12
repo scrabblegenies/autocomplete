@@ -7,7 +7,6 @@ class Wiki extends Component {
         this.modalLink = React.createRef();
     }
     componentDidMount(){
-        // console.log(`modal mounted`, this.modalLink)
     }
     render() {
         //deconstructing the props so that we don't need to write this.props.blabla every time
@@ -18,7 +17,6 @@ class Wiki extends Component {
                     <div
                         className="wikiPopup"
                         id="wiki"
-                        
                        >
                         <div className="popupBar">
                             <p>TAKE ME TO WIKI</p>
