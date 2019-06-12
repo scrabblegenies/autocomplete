@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 //axios
 import axios from 'axios';
 //js
-import UserInput from './UserInput.js';
-import UserOutput from './UserOutput.js';
-import Error from './Error.js';
-import Wiki from './Wiki.js';
-import Clock from './Clock.js';
-import Sounds from './Sounds.js';
-import StartButton from './StartButton.js';
-import StartMenu from './StartMenu.js';
-import DesktopIcons from './DesktopIcons.js';
-import Instructions from './Instructions.js'
+import UserInput from './Components/UserInput.js';
+import UserOutput from './Components/UserOutput.js';
+import Error from './Components/Error.js';
+import Wiki from './Components/Wiki.js';
+import Clock from './Components/Clock.js';
+import Sounds from './Components/Sounds.js';
+import StartButton from './Components/StartButton.js';
+import StartMenu from './Components/StartMenu.js';
+import DesktopIcons from './Components/DesktopIcons.js';
+import Instructions from './Components/Instructions.js'
 
 //font awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
