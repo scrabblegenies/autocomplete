@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import icon1 from './icon1.png'
-import icon2 from './icon2.png'
-import icon3 from './icon3.png'
-import icon4 from './icon4.png'
-import icon5 from './icon5.png'
-import icon6 from './icon6.png'
+import icon1 from './../Assets/icon1.png'
+import icon2 from './../Assets/icon2.png'
+import icon3 from './../Assets/icon3.png'
+import icon4 from './../Assets/icon4.png'
+import icon5 from './../Assets/icon5.png'
+import icon6 from './../Assets/icon6.png'
 
 class DesktopIcons extends Component {
     render() {

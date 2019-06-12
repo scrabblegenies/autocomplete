@@ -3,6 +3,8 @@ import React, { Component, Fragment } from 'react';
 //Class component for the user output
 class UserOutput extends Component {
     render() {
+
+        const { tabbable} = this.props;
         return (
             <Fragment>
                 {this.props.globalError ? (
@@ -13,7 +15,7 @@ class UserOutput extends Component {
                             <button
                                 key={index}
                                 className="autocompleteItem"
-                                tabIndex="0"
+                                tabIndex={tabbable}
                                 onClick={this.props.handleClick}
                             >
                                 {item}

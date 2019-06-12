@@ -11,12 +11,16 @@ class Instructions extends Component {
                             <p>WELCOME TO AUTOCOMPLETE</p>
                             <button
                                 className="x"
-                                onClick={closeInstructions}>
+                                onClick={closeInstructions}
+                                tabIndex="0">
                                 X
                             </button>
                         </div>
                         <p className="instructionsText">Welcome to the future! Start typing letters in the input and it will suggest a word or phrase for you! Click on a result and you can learn more about it.</p>
-                        <button className="x ok" onClick={closeInstructions}>OK</button>
+                        <button
+                            className="x ok"
+                            onClick={closeInstructions}
+                            tabIndex="0">OK</button>
                     </div>
                     
                 ) : (null)}
