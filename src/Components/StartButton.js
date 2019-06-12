@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import windows from './windows.png'
+import windows from './../Assets/windows.png'
 
 //class component for start button
 class StartButton extends Component {
