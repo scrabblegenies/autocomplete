@@ -109,15 +109,7 @@ img {
   flex-direction: column;
   position: relative;
   width: 80%;
-<<<<<<< HEAD
-  box-shadow: 3px 3px 10px black;
-    cursor: url('./Assets/cursor.png'),
-    default;
-    position: relative;
-    z-index: 20;
-=======
   z-index: 20;
->>>>>>> master
 }
 
 /* BAR ON TOP OF SEARCH ENGINE */
